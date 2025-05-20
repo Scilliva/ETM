@@ -1,0 +1,89 @@
+.box {
+	display: inline-block;
+	border: 1px solid black;
+	width: 120px;
+	height: 120px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	cursor: pointer;
+}
+
+.large{
+	width:512px !important;
+	height:512px !important;
+	background-size: cover;
+}
+
+.off {
+	border: solid 1px lightgray;
+}
+
+.no {
+	opacity:0;
+}
+
+.on {
+	border: solid 2px green;
+
+	/*background-color: red;*/
+}
+
+.active{
+	background: greenyellow;
+}
+
+.correct{
+	background: darkseagreen;
+}
+
+.past{
+	background: darkgrey;
+}
+
+.center {
+	margin: auto;
+	display: table;
+	margin-top: 10px;
+}
+
+.grid {
+	width: 600px;
+	line-height: 0;
+	margin: auto;
+	box-shadow: 0px 0px 20px white;
+	margin-top: 20px;
+}
+
+h1, h2, h3, h4 {
+	color: black;
+	margin: auto;
+	text-align: center;
+	width: 600px;
+	margin-top: 10px;
+
+}
+
+h4 {
+	margin-top: 0px;
+}
+
+
+.tweet{
+	width:620px;
+	height:300px;
+	background-size: cover;
+	text-align: left;
+	font-size: 24px;
+	padding: 65px 20px 45px 20px;
+	margin-bottom: 20px;
+	background-image: url('../../assets/tweet_back.png');
+	cursor: pointer;
+}
+
+
+
+.scoreFinal{
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}

@@ -164,3 +164,6 @@ yarn-error.log*
 /client/node_modules/
 /client/src/data/*.json
 keys.json 
+
+main/
+gh-pages/

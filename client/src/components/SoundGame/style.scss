@@ -1,0 +1,63 @@
+.box {
+	display: inline-block;
+	border: 1px solid black;
+	width: 120px;
+	height: 120px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+}
+
+.large{
+	width:512px !important;
+	height:512px !important;
+	background-size: cover;
+}
+
+.off {
+	border: solid 1px lightgray;
+}
+
+.no {
+	opacity:0;
+}
+
+.on {
+	border: solid 2px green;
+
+	/*background-color: red;*/
+}
+
+.sprite {
+	background-image: url('https://www.seekpng.com/png/detail/475-4754251_mario-png-clipart-new-super-mario-bros-yoshi.png');
+	background-position: center;
+	background-size: contain;
+
+	/*background-color: red;*/
+}
+
+.center {
+	margin: auto;
+	display: table;
+	margin-top: 10px;
+}
+
+.grid {
+	width: 600px;
+	line-height: 0;
+	margin: auto;
+	box-shadow: 0px 0px 20px white;
+	margin-top: 20px;
+}
+
+h1, h2, h3, h4 {
+	color: black;
+	margin: auto;
+	text-align: center;
+	width: 600px;
+	margin-top: 10px;
+
+}
+
+h4 {
+	margin-top: 0px;
+}

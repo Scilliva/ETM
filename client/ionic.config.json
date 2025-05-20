@@ -1,0 +1,7 @@
+{
+  "name": "Back2Mettis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
