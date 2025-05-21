@@ -163,7 +163,15 @@ yarn-error.log*
 /config/*
 /client/node_modules/
 /client/src/data/*.json
+/ressources/*
+
+
+
 keys.json 
 
+
+
 main/
+
 gh-pages/
+game_sound/

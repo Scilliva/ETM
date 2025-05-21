@@ -9,10 +9,9 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { mapOutline, appsOutline, trophyOutline, settingsOutline, peopleOutline } from 'ionicons/icons';
+import { mapOutline, appsOutline, trophyOutline, settingsOutline, peopleOutline, flagOutline } from 'ionicons/icons';
 import TabMap from './pages/TabMap';
 import TabMissions from './pages/TabMissions';
-import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
 import TabHome from './pages/TabHome';
 import TabStory from './pages/TabStory';
@@ -21,6 +20,7 @@ import { initStore } from './store';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
+import LanguagePage from "./pages/LanguagePage";
 
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -41,7 +41,7 @@ import {Provider} from "react-redux";
 import React from "react";
 import { setNovel } from './store/actions/novelActions';
 import { setScene } from './store/actions/sceneActions';
-import novelData from './data/novel.json';
+import novelData from './data/novel_en.json';
 
 import { NovelType } from './types/types';
 
@@ -49,18 +49,18 @@ import { NovelType } from './types/types';
 const { store } = initStore();
 var novel: NovelType = novelData;
 
-for (var sceneId of Object.keys(novel.scenes)){
-  let scene = novel.scenes[sceneId]
-  if (scene.visible == undefined){
-    novel.scenes[sceneId].visible = 1
-  }
-  novel.scenes[sceneId].userId = 0
-}
+
 
 if (novel) {
+  for (var sceneId of Object.keys(novel.scenes)){
+    let scene = novel.scenes[sceneId]
+    if (scene.visible == undefined){
+      novel.scenes[sceneId].visible = 1
+    }
+    novel.scenes[sceneId].userId = 0
+  }
+
   store.dispatch(setNovel(novel));
-
-
   store.dispatch(setScene(novel.scenes.start))
 }
 
@@ -93,14 +93,18 @@ const App: React.FC = () => (
           <Route exact path="/LLCEscapeGame/missions/:id" component={TabMissions}>
           </Route>
 
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/lang">
+            <LanguagePage />
           </Route>
 
           <Route path="/tab4">
             <Tab4 />
           </Route>
           <Route exact path="/">
+            <Redirect to="/lang" />
+          </Route>
+
+          <Route exact path="/LLCEscapeGame">
             <Redirect to="/story" />
           </Route>
         </IonRouterOutlet>
@@ -115,10 +119,11 @@ const App: React.FC = () => (
             <IonLabel>Map</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="tab2" href="/missions">
-            <IonIcon icon={appsOutline} />
-            <IonLabel>Missions</IonLabel>
+          <IonTabButton tab="tab_lang" href="/lang">
+            <IonIcon icon={flagOutline} />
+            <IonLabel>Lang</IonLabel>
           </IonTabButton>
+
 
 
         </IonTabBar>

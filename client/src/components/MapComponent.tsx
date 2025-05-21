@@ -91,6 +91,9 @@ class MapComponent extends Component<MapProps> {
         <div style={{height: '100vh'}} onClick={this.handleClick}>
 
             <LuxembourgMap id="svgMap"/>
+            <div style={{display: "contents"}}>
+                <img style={{marginLeft: "150px"}}  className="start3" src="../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png"  />
+            </div>
         </div>
 
       </IonContent>

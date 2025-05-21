@@ -48,20 +48,28 @@ class EmotionGame extends Component<EmotionGamePropsType> {
 				<div>
 					<Confetti width={this.state.width} height={this.state.height} />
 					<p className="scoreFinal">Game Over. Your score is {this.state.score}</p>
+
+					{this.state.score>=1000 &&
+					<p className="scoreFinal">Congratulations! You mastered all the Emotions! The secret code is <strong>JOY</strong></p>}
+
+					{this.state.score<1000 &&
+					<p className="scoreFinal">Too bad, Your score is good, but not enough. Try again!</p>}
+
 				</div>
 				}
 				{this.state.trials>0 &&
 					<div>
+
+					  <Camera photoMode={this.state.mode} scoreFn={this.setGameScore}/>
 						<header>
 						<div className="App__header">
 						  <h1>
-							<span>Emotion Detector</span>
+							<span>Can you beat 1000 points?</span>
 						  </h1>
 							<p className="score">Your score: {this.state.score}</p>
 
 						</div>
 					  </header>
-					  <Camera photoMode={this.state.mode} scoreFn={this.setGameScore}/>
 					</div>
 				}
 

@@ -78,6 +78,8 @@ export type NovelType = {
 
 export type MapProps = { novel?: NovelType; scene?: SceneType; setScene: Function, saves: SavesState, history:any};
 
+export type LangProps = { novel?: NovelType; scene?: SceneType; setScene: Function, saves: SavesState, history:any,
+setNovel: Function};
 
 export type NovelProps = { novel?: NovelType; scene?: SceneType; setScene: Function };
 
