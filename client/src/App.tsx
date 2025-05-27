@@ -107,7 +107,7 @@ const App: React.FC = () => (
             </Route>
 
             <Route exact path="/ETM">
-              <Redirect to="ETM/story" />
+              <Redirect to="/story" />
             </Route>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
