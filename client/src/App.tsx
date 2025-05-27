@@ -106,9 +106,7 @@ const App: React.FC = () => (
               <Redirect to="/lang" />
             </Route>
 
-            <Route exact path="/ETM">
-              <Redirect to="/story" />
-            </Route>
+            
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
             <IonTabButton tab="tabstory" href="/story">
