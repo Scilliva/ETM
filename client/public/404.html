@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL='/ETM/'" />
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages fallback to index.html
+      var redirectTo = '/ETM/index.html' + location.search + location.hash;
+      if (!location.pathname.startsWith('/ETM')) {
+        redirectTo = '/ETM' + location.pathname + location.search + location.hash;
+      }
+      window.location.replace(redirectTo);
+    </script>
   </head>
   <body>
+    <p>Redirecting...</p>
   </body>
 </html>
