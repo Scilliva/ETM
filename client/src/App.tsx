@@ -111,17 +111,17 @@ const App: React.FC = () => (
             </Route>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
-            <IonTabButton tab="tabstory" href="ETM/story">
+            <IonTabButton tab="tabstory" href="/story">
               <IonIcon icon={peopleOutline} />
               <IonLabel>Story</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="tab1" href="ETM/map">
+            <IonTabButton tab="tab1" href="/map">
               <IonIcon icon={mapOutline} />
               <IonLabel>Map</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="tab_lang" href="ETM/lang">
+            <IonTabButton tab="tab_lang" href="/lang">
               <IonIcon icon={flagOutline} />
               <IonLabel>Lang</IonLabel>
             </IonTabButton>
