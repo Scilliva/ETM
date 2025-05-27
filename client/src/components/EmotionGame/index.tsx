@@ -46,11 +46,13 @@ class EmotionGame extends Component<EmotionGamePropsType> {
 				{this.state.trials==0 &&
 
 				<div>
-					<Confetti width={this.state.width} height={this.state.height} />
 					<p className="scoreFinal">Game Over. Your score is {this.state.score}</p>
 
 					{this.state.score>=1000 &&
 					<p className="scoreFinal">Congratulations! You mastered all the Emotions! The secret code is <strong>JOY</strong></p>}
+
+					{this.state.score>=1000 &&
+					<Confetti width={this.state.width} height={this.state.height} />}
 
 					{this.state.score<1000 &&
 					<p className="scoreFinal">Too bad, Your score is good, but not enough. Try again!</p>}
