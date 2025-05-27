@@ -1,4 +1,4 @@
-import { Redirect, Route, HashRouter as Router } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -9,29 +9,18 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import {
-  mapOutline,
-  trophyOutline,
-  settingsOutline,
-  peopleOutline,
-  flagOutline
-} from 'ionicons/icons';
+import { mapOutline, appsOutline, trophyOutline, settingsOutline, peopleOutline, flagOutline } from 'ionicons/icons';
 import TabMap from './pages/TabMap';
 import TabMissions from './pages/TabMissions';
 import Tab4 from './pages/Tab4';
+import TabHome from './pages/TabHome';
 import TabStory from './pages/TabStory';
-import LanguagePage from "./pages/LanguagePage";
+import MissionDetails from './pages/MissionDetails';
 import { initStore } from './store';
-import { Provider } from 'react-redux';
-import React from 'react';
-
-import { setNovel } from './store/actions/novelActions';
-import { setScene } from './store/actions/sceneActions';
-import novelData from './data/novel_en.json';
-import { NovelType } from './types/types';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
+import LanguagePage from "./pages/LanguagePage";
 
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -48,75 +37,100 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import {Provider} from "react-redux";
+import React from "react";
+import { setNovel } from './store/actions/novelActions';
+import { setScene } from './store/actions/sceneActions';
+import novelData from './data/novel_en.json';
+
+import { NovelType } from './types/types';
+import { HashRouter } from 'react-router-dom';
+
+
 
 const { store } = initStore();
-const novel: NovelType = novelData;
+var novel: NovelType = novelData;
+
+
 
 if (novel) {
-  for (const sceneId of Object.keys(novel.scenes)) {
-    const scene = novel.scenes[sceneId];
-    if (scene.visible === undefined) {
-      novel.scenes[sceneId].visible = 1;
+  for (var sceneId of Object.keys(novel.scenes)){
+    let scene = novel.scenes[sceneId]
+    if (scene.visible == undefined){
+      novel.scenes[sceneId].visible = 1
     }
-    novel.scenes[sceneId].userId = 0;
+    novel.scenes[sceneId].userId = 0
   }
 
   store.dispatch(setNovel(novel));
-  store.dispatch(setScene(novel.scenes.start));
+  store.dispatch(setScene(novel.scenes.start))
 }
 
 const App: React.FC = () => (
   <IonApp>
     <Provider store={store}>
-      <Router basename="/ETM">
-        <IonReactRouter>
-          <IonTabs>
-            <IonRouterOutlet>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
 
-              <Route exact path="/story">
-                <TabStory />
-              </Route>
+            <Route exact path="/story" >
+              <TabStory></TabStory>
+            </Route>
 
-              <Route exact path="/map">
-                <TabMap />
-              </Route>
+            <Route exact path="/ETM/story" >
+              <TabStory></TabStory>
+            </Route>
 
-              <Route exact path="/missions/:id" component={TabMissions} />
+            <Route exact path="/ETM/map">
+              <TabMap />
+            </Route>
 
-              <Route exact path="/lang">
-                <LanguagePage />
-              </Route>
+            <Route exact path="/map">
+              <TabMap />
+            </Route>
 
-              <Route exact path="/tab4">
-                <Tab4 />
-              </Route>
+            <Route exact path="/missions/:id" component={TabMissions}>
+            </Route>
 
-              <Route exact path="/">
-                <Redirect to="/lang" />
-              </Route>
+            <Route exact path="/ETM/missions/:id" component={TabMissions}>
+            </Route>
 
-            </IonRouterOutlet>
+            <Route path="/lang">
+              <LanguagePage />
+            </Route>
 
-            <IonTabBar slot="bottom">
-              <IonTabButton tab="tabstory" href="/story">
-                <IonIcon icon={peopleOutline} />
-                <IonLabel>Story</IonLabel>
-              </IonTabButton>
+            <Route path="/tab4">
+              <Tab4 />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/lang" />
+            </Route>
 
-              <IonTabButton tab="tab1" href="/map">
-                <IonIcon icon={mapOutline} />
-                <IonLabel>Map</IonLabel>
-              </IonTabButton>
+            <Route exact path="/ETM">
+              <Redirect to="/story" />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="tabstory" href="/story">
+              <IonIcon icon={peopleOutline} />
+              <IonLabel>Story</IonLabel>
+            </IonTabButton>
 
-              <IonTabButton tab="tab_lang" href="/lang">
-                <IonIcon icon={flagOutline} />
-                <IonLabel>Lang</IonLabel>
-              </IonTabButton>
-            </IonTabBar>
+            <IonTabButton tab="tab1" href="/map">
+              <IonIcon icon={mapOutline} />
+              <IonLabel>Map</IonLabel>
+            </IonTabButton>
 
-          </IonTabs>
-        </IonReactRouter>
-      </Router>
+            <IonTabButton tab="tab_lang" href="/lang">
+              <IonIcon icon={flagOutline} />
+              <IonLabel>Lang</IonLabel>
+            </IonTabButton>
+
+
+
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
     </Provider>
   </IonApp>
 );
