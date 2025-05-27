@@ -112,10 +112,12 @@ class TweetGame extends Component<TweetGamePropsType> {
 				{this.state.tiles.length==this.state.selectedColumn &&
 
 				<div>
-					<Confetti width={this.state.width} height={this.state.height} />
 					<p className="scoreFinal">Game Over. Your finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
 					{this.state.time<=180 && this.state.nbClick<15 &&
 					<p className="scoreFinal">Congratulations! You collected all the tweets! The secret code is <strong>31216</strong></p>}
+
+					{this.state.time<=180 && this.state.nbClick<15 &&
+					<Confetti width={this.state.width} height={this.state.height} />}
 
 					{this.state.time>180 || this.state.nbClick>=15 &&
 					<p className="scoreFinal">Too bad, you took too much time or clicks. The system has been reset. Try again!</p>}
