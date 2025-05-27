@@ -73,7 +73,7 @@ const App: React.FC = () => (
         <IonTabs>
           <IonRouterOutlet>
 
-            <Route exact path="ETM/story" >
+            <Route exact path="/story" >
               <TabStory></TabStory>
             </Route>
 
@@ -103,7 +103,7 @@ const App: React.FC = () => (
               <Tab4 />
             </Route>
             <Route exact path="/">
-              <Redirect to="ETM/lang" />
+              <Redirect to="/lang" />
             </Route>
 
             <Route exact path="/ETM">
