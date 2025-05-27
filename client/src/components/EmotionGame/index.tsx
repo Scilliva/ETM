@@ -46,7 +46,7 @@ class EmotionGame extends Component<EmotionGamePropsType> {
 				{this.state.trials==0 &&
 
 				<div>
-					<p className="scoreFinal">Game Over. Your score is {this.state.score}</p>
+					<p className="scoreFinal">Your score is {this.state.score}</p>
 
 					{this.state.score>=1000 &&
 					<p className="scoreFinal">Congratulations! You mastered all the Emotions! The secret code is <strong>JOY</strong></p>}
