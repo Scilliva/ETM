@@ -112,7 +112,7 @@ class TweetGame extends Component<TweetGamePropsType> {
 				{this.state.tiles.length==this.state.selectedColumn &&
 
 				<div>
-					<p className="scoreFinal">Game Over. Your finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
+					<p className="scoreFinal">You finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
 					{this.state.time<=180 && this.state.nbClick<15 &&
 					<p className="scoreFinal">Congratulations! You collected all the tweets! The secret code is <strong>31216</strong></p>}
 
