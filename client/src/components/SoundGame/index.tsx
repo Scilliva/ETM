@@ -157,7 +157,6 @@ class SoundGame extends Component<TweetGamePropsType> {
 				}
 				{this.state.count_drops>this.state.nbCounts && this.state.success==0 &&
 				<div>
-				<Confetti width={this.state.width} height={this.state.height} />
 				<p className="scoreFinal">Too bad, the game is over, have you guessed the code? If not, go back and try again!</p>
 				</div>
 				}
