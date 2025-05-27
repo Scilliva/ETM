@@ -254,10 +254,11 @@ class AgeGame extends Component<AgeGamePropsType> {
 			<IonGrid>
 				{this.state.selectedColumn==this.state.trueAges.length &&
 				<div>
-					<Confetti width={this.state.width} height={this.state.height} />
 					<p className="scoreFinal">Game Over. Your finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
 					{this.state.time<120 && this.state.nbClick<12 &&
 					<p className="scoreFinal">Congratulations! You beat my record. The code is <strong>----- ---.. -....</strong></p>}
+					{this.state.time<120 && this.state.nbClick<12 &&
+					<Confetti width={this.state.width} height={this.state.height} />}
 				</div>
 
 				}
