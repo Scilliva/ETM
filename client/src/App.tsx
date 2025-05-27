@@ -44,6 +44,8 @@ import { setScene } from './store/actions/sceneActions';
 import novelData from './data/novel_en.json';
 
 import { NovelType } from './types/types';
+import { HashRouter } from 'react-router-dom';
+
 
 
 const { store } = initStore();
@@ -67,68 +69,68 @@ if (novel) {
 const App: React.FC = () => (
   <IonApp>
     <Provider store={store}>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
 
-          <Route exact path="/story" >
-            <TabStory></TabStory>
-          </Route>
+            <Route exact path="ETM/story" >
+              <TabStory></TabStory>
+            </Route>
 
-          <Route exact path="/LLCEscapeGame/story" >
-            <TabStory></TabStory>
-          </Route>
+            <Route exact path="/ETM/story" >
+              <TabStory></TabStory>
+            </Route>
 
-          <Route exact path="/LLCEscapeGame/map">
-            <TabMap />
-          </Route>
+            <Route exact path="/ETM/map">
+              <TabMap />
+            </Route>
 
-          <Route exact path="/map">
-            <TabMap />
-          </Route>
+            <Route exact path="/map">
+              <TabMap />
+            </Route>
 
-          <Route exact path="/missions/:id" component={TabMissions}>
-          </Route>
+            <Route exact path="/missions/:id" component={TabMissions}>
+            </Route>
 
-          <Route exact path="/LLCEscapeGame/missions/:id" component={TabMissions}>
-          </Route>
+            <Route exact path="/ETM/missions/:id" component={TabMissions}>
+            </Route>
 
-          <Route path="/lang">
-            <LanguagePage />
-          </Route>
+            <Route path="/lang">
+              <LanguagePage />
+            </Route>
 
-          <Route path="/tab4">
-            <Tab4 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/lang" />
-          </Route>
+            <Route path="/tab4">
+              <Tab4 />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="ETM/lang" />
+            </Route>
 
-          <Route exact path="/LLCEscapeGame">
-            <Redirect to="/story" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tabstory" href="/story">
-            <IonIcon icon={peopleOutline} />
-            <IonLabel>Story</IonLabel>
-          </IonTabButton>
+            <Route exact path="/ETM">
+              <Redirect to="ETM/story" />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="tabstory" href="ETM/story">
+              <IonIcon icon={peopleOutline} />
+              <IonLabel>Story</IonLabel>
+            </IonTabButton>
 
-          <IonTabButton tab="tab1" href="/map">
-            <IonIcon icon={mapOutline} />
-            <IonLabel>Map</IonLabel>
-          </IonTabButton>
+            <IonTabButton tab="tab1" href="ETM/map">
+              <IonIcon icon={mapOutline} />
+              <IonLabel>Map</IonLabel>
+            </IonTabButton>
 
-          <IonTabButton tab="tab_lang" href="/lang">
-            <IonIcon icon={flagOutline} />
-            <IonLabel>Lang</IonLabel>
-          </IonTabButton>
+            <IonTabButton tab="tab_lang" href="ETM/lang">
+              <IonIcon icon={flagOutline} />
+              <IonLabel>Lang</IonLabel>
+            </IonTabButton>
 
 
 
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
     </Provider>
   </IonApp>
 );
