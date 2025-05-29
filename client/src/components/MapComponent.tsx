@@ -92,7 +92,7 @@ class MapComponent extends Component<MapProps> {
 
             <LuxembourgMap id="svgMap"/>
             <div style={{display: "contents"}}>
-                <img style={{marginLeft: "150px"}}  className="start3" src="../../ETM/assets/locations/TRUST_HAPPY.png"  />
+                <img style={{marginLeft: "150px"}}  className="start3" src="../../ETM/assets/locations/TRUST_MAP.png"  />
             </div>
         </div>
 
