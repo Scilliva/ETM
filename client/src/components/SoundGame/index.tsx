@@ -1,17 +1,66 @@
-import React, {Component} from "react";
+import React, {Component, useState} from "react";
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
 import './style.scss';
 
 import {GridProps, BoxProps, TweetGamePropsType} from "../../types/types";
 import Confetti from "react-confetti";
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+import ReactTooltip from 'react-tooltip';
+
+const base_folder = "https://raw.githubusercontent.com/Scilliva/ETM/game_sound/client/src/assets/audio/"
 
 
+interface SoundGameState {
+	timer: number;
+	intervalId: any; // or use `NodeJS.Timeout` if you're using Node types
+	// Add your existing state keys here too
+	score: number;
+	startDate: number;
+	height: number;
+	width: number;
+	tiles: number[];
+	scrambledSounds: number[];
+	associationsSounds: { [key: string]: string };
+	selectedColumn: number;
+	audios: HTMLAudioElement[];
+	audios_labels: string[];
+	count_drops: number;
+	nbCounts: number;
+	success: number;
+}
 
-class SoundGame extends Component<TweetGamePropsType> {
+class SoundGame extends Component<TweetGamePropsType, SoundGameState> {
 	state: any;
 
 	constructor(props: any) {
 		super(props);
+
+
+		let audios = [new Audio(base_folder + "50db_0.mp3?raw=true"), new Audio(base_folder + "50db_1.mp3?raw=true"),
+			new Audio(base_folder + "50db_2.mp3?raw=true"), new Audio(base_folder + "35db_0.mp3?raw=true"),
+			new Audio(base_folder + "35db_1.mp3?raw=true"), new Audio(base_folder + "20db_0.mp3?raw=true"),
+			new Audio(base_folder + "20db_1.mp3?raw=true") ]
+
+		let audios_labels = ["that day the merchant gave the boy permission to build the display",
+			"everyone seemed very excited", "plastic surgery has become more popular",
+			"the boy looked out at the horizon","later we simply let life proeed in its own direction toward its own fate",
+			"now I would drift gently off to dream land",
+			"my wife pointed out to me the brightness of the red green and yellow signal light"
+		]
+
+		//let audio_backgrounds = ["cards/1.pn"]
+
+		let sounds = Array.from(Array(this.props.cols).keys())
+		sounds.sort(() => (Math.random() > .5) ? 1 : -1)
+		//sounds = [6,0,4, 2 , 1, 5 , 3]
+
+		let tiles = Array.from(Array(this.props.cols).keys())
+		tiles.sort(() => (Math.random() > .5) ? 1 : -1)
+		let associations = Object.fromEntries(tiles.map(e=>["drop_"+e,""]))
+
+		console.log("tiles",tiles)
+		console.log("sounds",sounds)
+		console.log("associations",associations)
 
 
 		this.state = {
@@ -19,89 +68,158 @@ class SoundGame extends Component<TweetGamePropsType> {
 			startDate:Date.now(),
 			height : window.innerHeight,
 			width : window.innerWidth,
-			tiles:Array.from(Array(this.props.cols).keys()),
-			selectedColumn:0
+			tiles:tiles,
+			scrambledSounds:sounds,
+			associationsSounds:associations,
+			selectedColumn:0,
+			audios:audios,
+			audios_labels:audios_labels,
+			count_drops:0,
+			nbCounts:50,
+			success:0,
+			//adding a timer to the game
+			timer: 0,
+			intervalId: null
+
 		}
 
-		if (this.props.db){
-			const doc = this.props.db.collection('llc')
-			const observer = doc.where('game', '==', 'TWEET').where('type', '==', 'QR')
-			  .onSnapshot(querySnapshot => {
-				querySnapshot.docChanges().forEach(change => {
-
-				if (change.type === "added") {
-					let params = change.doc.data().params;
-					let time = change.doc.data().time*1000;
-					console.log(time, this.state.startDate, time > this.state.startDate)
-					if (time > this.state.startDate){
-						this.selectBox(this.state.selectedColumn, parseInt(params[0]))
-					}
-
-				}
-			  });
-			});
-		}
+		console.log(this.state.associationsSounds)
 
 	}
 
-	selectBox = (lane:number, index:number) => {
-		alert(lane*10+index)
-	}
-
-	populate_row = (row) => {
-
-		return (label, index) =>{
-		return <div style={{ textAlign: "center"}} className={"box"} key={ index } onClick={() => this.selectBox(row,index)}>
-									<span style={{ display: "inline-block", marginTop:60}}>{label}</span>
-		</div>
-		}
-	}
-
-	populate = () =>{
-
-	}
+	play = (index) => {
+		console.log(index+"--"+ this.state.audios[index].src)
+		this.state.audios[index].play()
+	  }
 
 	componentDidMount(){
-		this.populate();
+
+		const intervalId = setInterval(() => {
+    		this.setState((prevState) => ({ timer: prevState.timer + 1 }));
+  		}, 1000); // run every second
+
+  		this.setState({ intervalId });
 
 	}
+
+	populateRow = (row) => {
+
+		return (label, index) =>{
+		return <div style={{ display:"inline-block"}}  key={ index } >
+
+			{row == 0 &&
+			<DragDropContainer targetKey={"label"} >
+				<div className="card" id={"sound_"+this.state.tiles[label]} onClick={evt => this.play(this.state.tiles[label])}
+				style={{backgroundImage: "url('"+base_folder+"cards/"+(this.state.tiles[label]+2)+".png?raw=true')"}}
+				></div>
+			</DragDropContainer>
+			}
+
+			{row == 1 &&
+			<DropTarget targetKey={"label"} onHit={this.dropped}>
+				<div className="card my_target" data-tip={this.state.audios_labels[label]} style={{backgroundImage: "url('"+base_folder+"cards/back.png?raw=true')"}} onDoubleClick={this.clearDrop}  id={"drop_"+label}></div>
+			</DropTarget>
+			}
+
+				</div>
+		}
+	}
+
+
+	dropped = (e) => {
+
+		let associations = this.state.associationsSounds
+		if(associations[e.target.id] !=""){
+			return
+			document.getElementById(associations[e.target.id]).parentElement.parentElement.style.visibility = 'initial';
+		}
+
+		associations[e.target.id] = e.dragElem.firstChild.id
+		let success = 1
+		const keys = Object.keys(associations)
+		for (let i=0;i<keys.length;i++){
+			if(associations["drop_"+i]!= "sound_"+i || associations["drop_"+i]==""){
+				success = 0
+			}
+		}
+
+		this.setState({"associationsSounds":associations, "count_drops":this.state.count_drops+1, "success":success}, () => {
+			if (success === 1 || this.state.count_drops > this.state.nbCounts) {
+				clearInterval(this.state.intervalId);
+			}
+		});
+
+      	e.containerElem.style.visibility = 'hidden';
+		if (e.target.id.split("_")[1]==e.dragElem.firstChild.id.split("_")[1]){
+			if (e.target.id.split("_")[1]==0 || e.target.id.split("_")[1]==3 || e.target.id.split("_")[1]==5){
+				e.target.classList.add("correct")
+			}
+
+			e.target.classList.remove("incorrect")
+		}
+		else{
+			e.target.classList.remove("correct")
+			e.target.classList.add("incorrect")
+		}
+
+
+	  console.log(e.dragElem.firstChild.id, e.target.id,this.state.count_drops )
+  	}
+
+	  clearDrop = (e) => {
+			console.log(e)
+		  let associations = this.state.associationsSounds
+		  if (associations[e.target.id] != "") {
+			  document.getElementById(associations[e.target.id]).parentElement.parentElement.style.visibility = 'initial';
+			  e.target.classList.remove("incorrect")
+			  e.target.classList.remove("correct")
+			  associations[e.target.id] = ""
+		  }
+
+		  this.setState({"associationsSounds": associations})
+	  }
 
 	render() {
 		return (
 			<IonGrid>
-				{false && <Confetti width={this.state.width} height={this.state.height} />}
-			  <IonRow>
-				<IonCol>
+				{this.state.success==1 &&
+				<div>
+				<Confetti width={this.state.width} height={this.state.height} />
+				<p className="scoreFinal">Congratulations, you have associated all the cards and sounds. The green hearts hint to the secret number!</p>
+				</div>
+				}
+				{this.state.count_drops>this.state.nbCounts && this.state.success==0 &&
+				<div>
+				<p className="scoreFinal">Too bad, the game is over, have you guessed the code? If not, go back and try again!</p>
+				</div>
+				}
+				<ReactTooltip />
 
-					<div className="grid" style={{ width: this.state.tiles.length * 122}}>
-							{this.state.tiles.map(this.populate_row(0),this)}
-					</div>
-					<div className="grid" style={{ width: this.state.tiles.length * 122}}>
-							{this.state.tiles.map(this.populate_row(1),this)}
-					</div>
-				</IonCol>
-				<IonCol style={{textAlign: "center"}}>
-					<h3>Tweets</h3>
-
-					{this.state.selectedFace &&
-						<div>
-
-
-							{this.state.selectedColumn<this.state.trueAges.length &&
-							<p>Scan again to confirm that this person is {this.state.trueAges[this.state.selectedColumn]} years old ;)</p>
-							}
-
-							{this.state.selectedColumn==this.state.trueAges.length &&
-							<p>Congratulations! You completed the game</p>
-							}
-
+				<IonRow>
+					<IonCol size="12" style={{ textAlign: "center"}}>
+						<div className="timer-display">
+							Time: 	{String(Math.floor(this.state.timer / 60)).padStart(2, '0')}:
+									{String(this.state.timer % 60).padStart(2, '0')}
 						</div>
+					</IonCol>
+				</IonRow>
 
-					}
-				</IonCol>
-			  </IonRow>
+				{this.state.count_drops <= this.state.nbCounts && this.state.success==0 &&
+				<IonRow>
+
+					<div className="grid" style={{textAlign: "center", width: (this.state.tiles.length + 1) * 155}}>
+						{this.state.tiles.map(this.populateRow(0), this)}
+					</div>
+				</IonRow>
+				}
+				{this.state.count_drops<=this.state.nbCounts &&
+				<IonRow>
+					<div className="grid" style={{ width: (this.state.tiles.length+1) * 155}}>
+							{this.state.scrambledSounds.map(this.populateRow(1),this)}
+					</div>
+			  	</IonRow>
+				}
 			</IonGrid>
-
 
 		);
 	};
