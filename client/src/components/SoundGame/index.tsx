@@ -7,7 +7,7 @@ import Confetti from "react-confetti";
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 import ReactTooltip from 'react-tooltip';
 
-const base_folder = "https://github.com/yamizi/LLCEscapeGame/blob/game_sound/client/src/assets/audio/"
+const base_folder = "https://github.com/Scilliva/ETM/blob/game_sound/client/src/assets/audio/"
 
 class SoundGame extends Component<TweetGamePropsType> {
 	state: any;
