@@ -7,14 +7,33 @@ import Confetti from "react-confetti";
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 import ReactTooltip from 'react-tooltip';
 
-const base_folder = "https://github.com/Scilliva/ETM/blob/game_sound/client/src/assets/audio/"
+const base_folder = "https://raw.githubusercontent.com/Scilliva/ETM/game_sound/client/src/assets/audio/"
 
-class SoundGame extends Component<TweetGamePropsType> {
+
+interface SoundGameState {
+	timer: number;
+	intervalId: any; // or use `NodeJS.Timeout` if you're using Node types
+	// Add your existing state keys here too
+	score: number;
+	startDate: number;
+	height: number;
+	width: number;
+	tiles: number[];
+	scrambledSounds: number[];
+	associationsSounds: { [key: string]: string };
+	selectedColumn: number;
+	audios: HTMLAudioElement[];
+	audios_labels: string[];
+	count_drops: number;
+	nbCounts: number;
+	success: number;
+}
+
+class SoundGame extends Component<TweetGamePropsType, SoundGameState> {
 	state: any;
 
 	constructor(props: any) {
 		super(props);
-
 
 
 		let audios = [new Audio(base_folder + "50db_0.mp3?raw=true"), new Audio(base_folder + "50db_1.mp3?raw=true"),
@@ -58,6 +77,10 @@ class SoundGame extends Component<TweetGamePropsType> {
 			count_drops:0,
 			nbCounts:50,
 			success:0,
+			//adding a timer to the game
+			timer: 0,
+			intervalId: null
+
 		}
 
 		console.log(this.state.associationsSounds)
@@ -70,6 +93,12 @@ class SoundGame extends Component<TweetGamePropsType> {
 	  }
 
 	componentDidMount(){
+
+		const intervalId = setInterval(() => {
+    		this.setState((prevState) => ({ timer: prevState.timer + 1 }));
+  		}, 1000); // run every second
+
+  		this.setState({ intervalId });
 
 	}
 
@@ -114,7 +143,11 @@ class SoundGame extends Component<TweetGamePropsType> {
 			}
 		}
 
-		this.setState({"associationsSounds":associations, "count_drops":this.state.count_drops+1, "success":success})
+		this.setState({"associationsSounds":associations, "count_drops":this.state.count_drops+1, "success":success}, () => {
+			if (success === 1 || this.state.count_drops > this.state.nbCounts) {
+				clearInterval(this.state.intervalId);
+			}
+		});
 
       	e.containerElem.style.visibility = 'hidden';
 		if (e.target.id.split("_")[1]==e.dragElem.firstChild.id.split("_")[1]){
@@ -161,6 +194,16 @@ class SoundGame extends Component<TweetGamePropsType> {
 				</div>
 				}
 				<ReactTooltip />
+
+				<IonRow>
+					<IonCol size="12" style={{ textAlign: "center"}}>
+						<div className="timer-display">
+							Time: 	{String(Math.floor(this.state.timer / 60)).padStart(2, '0')}:
+									{String(this.state.timer % 60).padStart(2, '0')}
+						</div>
+					</IonCol>
+				</IonRow>
+
 				{this.state.count_drops <= this.state.nbCounts && this.state.success==0 &&
 				<IonRow>
 
