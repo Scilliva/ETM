@@ -78,6 +78,8 @@ export type NovelType = {
 
 export type MapProps = { novel?: NovelType; scene?: SceneType; setScene: Function, saves: SavesState, history:any};
 
+export type LangProps = { novel?: NovelType; scene?: SceneType; setScene: Function, saves: SavesState, history:any,
+setNovel: Function};
 
 export type NovelProps = { novel?: NovelType; scene?: SceneType; setScene: Function };
 
@@ -106,6 +108,7 @@ export type GridProps = {
   gridFull: string[][];
   selectBox:(row:number, column:number) => void;
   ranFaces?: string[][];
+  selectedColumn: number;
 }
 
 export type BoxProps = {

@@ -91,6 +91,9 @@ class MapComponent extends Component<MapProps> {
         <div style={{height: '100vh'}} onClick={this.handleClick}>
 
             <LuxembourgMap id="svgMap"/>
+            <div style={{display: "contents"}}>
+                <img style={{marginLeft: "150px"}}  className="start3" src="../../ETM/assets/locations/TRUST_MAP1.png"  />
+            </div>
         </div>
 
       </IonContent>

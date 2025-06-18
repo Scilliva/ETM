@@ -31,7 +31,7 @@ const Camera = ({ photoMode, scoreFn }) => {
   const [timeLeft, { start, pause, resume, reset }] = useCountDown(initialTime, interval);
 
   let myscore = 0;
-  let nbRetrials = 12;
+  let nbRetrials = 8;
   let targetId = 0;
 
   const [targetFace, setTargetFace] = useState(0);
@@ -159,7 +159,7 @@ const Camera = ({ photoMode, scoreFn }) => {
               {emotions[targetFace]}
                 </span>
               </p>
-              <p>You still have {trials} trials before the end of the game</p>
+              <p>You still have {trials-1} trials before the end of the game</p>
 
             </div>
       </div>

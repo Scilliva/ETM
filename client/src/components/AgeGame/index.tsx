@@ -6,6 +6,26 @@ import {GridProps, BoxProps, AgeGamePropsType} from "../../types/types";
 import faces from '../../data/faces.json';
 import Confetti from "react-confetti";
 
+const MAX_TIME = 120; 
+
+interface AgeGameState {
+  score: number;
+  gridFull: string[][];
+  ranFaces: string[][];
+  trueAges: string[];
+  selectedFace: string;
+  selectedColumn: number;
+  startDate: number;
+  height: number;
+  width: number;
+  time: number;
+  nbClick: number;
+  beginTime: number;
+  timer: number;
+  intervalId: any;
+  showInstruction: boolean;
+}
+
 
 function arrayClone(arr) {
 	return JSON.parse(JSON.stringify(arr));
@@ -21,8 +41,7 @@ class Box extends Component<BoxProps> {
 			<div className={this.props.boxClass}
 				id={this.props.id}
 				onClick={this.selectBox}
-				 title={this.props.face}
-				 style={{ backgroundImage: `url(${"../../LLCEscapeGame/assets/imgs/"+this.props.face.replace("#","/") || ""})` }}
+				 style={{ backgroundImage: `url(${"../../ETM/assets/imgs/"+this.props.face.replace("#","/") || ""})` }}
 			/>
 		)
 	}
@@ -49,6 +68,11 @@ class Grid extends Component<GridProps> {
 				else if (this.props.gridFull[j][i]=="N"){
 					gridBoxClass = "box no"
 				}
+
+				if (i !== this.props.selectedColumn){
+					gridBoxClass += " inactive-column";
+				}
+
 				boxArr.push(
 					<Box
 						boxClass={gridBoxClass}
@@ -74,11 +98,12 @@ class Grid extends Component<GridProps> {
 	}
 }
 
-class AgeGame extends Component<AgeGamePropsType> {
+class AgeGame extends Component<AgeGamePropsType, AgeGameState> {
 	state: any;
 
 	constructor(props: any) {
 		super(props);
+
 
 
 		const minAge = 21;
@@ -150,6 +175,9 @@ class AgeGame extends Component<AgeGamePropsType> {
 			time:0,
 			nbClick:0,
 			beginTime:new Date().getTime(),
+			timer: MAX_TIME,
+			intervalId: null,
+			showInstruction: false,
 		}
 
 		if (this.props.db){
@@ -216,7 +244,9 @@ class AgeGame extends Component<AgeGamePropsType> {
 
 			if(this.state.trueAges.length==selectedColumn){
 				let time = Math.floor((new Date().getTime() - this.state.beginTime)/1000)
-				this.setState({"time":time})
+				this.setState({ time }, () => {
+					clearInterval(this.state.intervalId);
+				});
 			}
 
 			this.setState({gridFull:gridCopy,selectedColumn:selectedColumn, "nbClick":this.state.nbClick+1})
@@ -245,20 +275,69 @@ class AgeGame extends Component<AgeGamePropsType> {
 
 	componentDidMount(){
 		this.populate();
+		
+		const intervalId = setInterval(() => {
+			this.setState(prevState => {
+			if (prevState.timer > 0) {
+				return { timer: prevState.timer - 1 };
+			} else {
+				clearInterval(this.state.intervalId);
+				return null;
+			}
+			});
+		}, 1000);
 
+		this.setState({ intervalId });
+	}
+
+	
+	toggleMessage = () => {
+		this.setState({showInstruction: !this.state.showInstruction})
 	}
 
 	render() {
 		const column = this.state.selectedColumn;
 		return (
+			<>
+			<div style={{
+				position: "absolute" as const,
+				top: "10px",
+				right: "10px",
+				zIndex: 1000
+			}}>
+				<button
+				onClick={this.toggleMessage}
+				className="info-button"
+				>
+				Game Instructions
+				</button>
+
+				{this.state.showInstruction && (
+				<div className="overlay-message" onClick={this.toggleMessage}>
+					<div className="message-box" onClick={(e) => e.stopPropagation()}>
+					<h3>Game Instructions</h3>
+					<p>On top of the grid, you have a target age. Your task is to find the face that matches the age.</p>
+					<p>You will start from the column on the left, and you can move to the next column if you find the correct face.</p>
+					<p>When you click on a face. It appears bigger on the right. It allows you to check if the face is the correct age. Click again on the small image to confirm your choice.</p>
+					<p><b>Be careful, images have been altered to try and trick face recognition!</b></p>
+					<p>Click anywhere outside this box to close it.</p>
+					</div>
+				</div>
+				)}
+			</div>
+
 			<IonGrid>
 				{this.state.selectedColumn==this.state.trueAges.length &&
 				<div>
-					<Confetti width={this.state.width} height={this.state.height} />
-					<p className="scoreFinal">Game Over. Your finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
+					<p className="scoreFinal">You finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
+					{this.state.time<120 && this.state.nbClick<12 &&
+					<p className="scoreFinal">Congratulations! You beat my record. The code is <strong>----- ---.. -....</strong></p>}
+					{this.state.time<120 && this.state.nbClick<12 &&
+					<Confetti width={this.state.width} height={this.state.height} />}
 				</div>
 
 				}
+
 				{this.state.selectedColumn != this.state.trueAges.length &&
 				<IonRow>
 					<IonCol>
@@ -273,21 +352,35 @@ class AgeGame extends Component<AgeGamePropsType> {
 							</div>
 
 							<Grid rows={this.props.rows} cols={this.props.cols} gridFull={this.state.gridFull}
-								  selectBox={this.selectBox} ranFaces={this.state.ranFaces}></Grid>
+								  selectBox={this.selectBox} ranFaces={this.state.ranFaces} selectedColumn={this.state.selectedColumn}></Grid>
 						</div>
 					</IonCol>
 					<IonCol style={{textAlign: "center"}}>
-						<h3>Selected Face</h3>
+						<h3>
+						Selected Face
+						</h3>
 
 						{this.state.selectedFace &&
 						<div>
 							<div className="box large"
-								 style={{backgroundImage: `url(${"../../LLCEscapeGame/assets/imgs/" + this.state.selectedFace.replace("#", "/") || ""})`}}
+								 style={{backgroundImage: `url(${"../../ETM/assets/imgs/" + this.state.selectedFace.replace("#", "/") || ""})`}}
 							/>
 
 							{this.state.selectedColumn < this.state.trueAges.length &&
 							<p>Scan again to confirm that this person
 								is {this.state.trueAges[this.state.selectedColumn]} years old ;)</p>
+							}
+							{this.state.selectedColumn != this.state.trueAges.length &&
+							<div className="timer-display">
+								Time: 	{String(Math.floor(this.state.timer / 60)).padStart(2, '0')}:
+										{String(this.state.timer % 60).padStart(2, '0')}
+							</div>
+							}
+
+							{this.state.selectedColumn != this.state.trueAges.length &&
+								<div className="click-display">
+									Moves used: {this.state.nbClick} / 12
+								</div>
 							}
 
 							{this.state.selectedColumn == this.state.trueAges.length &&
@@ -302,6 +395,7 @@ class AgeGame extends Component<AgeGamePropsType> {
 				}
 			</IonGrid>
 
+		</>
 
 		);
 	};

@@ -10,18 +10,30 @@ path{
     fill: red;
 }
 
+.east.ai{
+    fill: rgba(243, 169, 169, 0.75);
+}
+
 .north{
     fill: yellow;
+}
+
+.north.ai{
+    fill: rgba(245, 245, 183, 0.75);
 }
 
 .center{
     fill:blue;
 }
 
+.center.ai{
+    fill: rgba(193, 193, 235, 0.75);
+}
+
 .south{
     fill:green;
 }
 
-.ai{
-    fill:darkgray;
+.south.ai{
+    fill: rgb(198, 242, 198, 0.75);
 }

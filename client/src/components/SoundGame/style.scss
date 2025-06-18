@@ -1,10 +1,18 @@
-.box {
+.card {
 	display: inline-block;
-	border: 1px solid black;
-	width: 120px;
-	height: 120px;
+	border: 0px solid black;
+	width: 154px;
+	height: 216px;
 	margin-left: 2px;
 	margin-bottom: 2px;
+	background: white;
+	background-size: 154px 216px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .large{
@@ -42,8 +50,8 @@
 }
 
 .grid {
-	width: 600px;
-	line-height: 0;
+	width: 100vw;
+	line-height: 25px;
 	margin: auto;
 	box-shadow: 0px 0px 20px white;
 	margin-top: 20px;
@@ -60,4 +68,74 @@ h1, h2, h3, h4 {
 
 h4 {
 	margin-top: 0px;
+}
+
+
+.highlighted .my_target {background-color: lightblue}
+
+
+.droptarget {
+	height: auto;
+	display: inline-block;
+}
+
+.incorrect{
+border:	solid 5px red;
+}
+
+.correct{
+border:	solid 5px green;
+}
+
+.scoreFinal{
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.click-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(241, 70, 70);
+  margin: 10px auto;
+  width: fit-content;
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  outline: 2px solid black;
+}
+
+.info-button{
+  font-size: 1.5rem;
+  font-weight: bold; 
+  margin: 10px auto;
+  width: fit-content;
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  outline: 2px solid black;
+}
+.overlay-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // dark transparent background
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.message-box {
+  background-color: #fff;
+  padding: 2rem;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
 }

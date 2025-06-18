@@ -1,5 +1,5 @@
 {
-  "name": "Escape the machine",
+  "name": "ETMGame",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,7 +25,6 @@
     "@types/react-dom": "^16.9.10",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
-    "ajv": "^8.17.1",
     "classnames": "^2.2.6",
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-nativegeocoder": "^3.4.1",
@@ -36,20 +35,27 @@
     "google-map-react": "^2.1.9",
     "ionicons": "^5.4.0",
     "jsqr": "^1.3.1",
-    "react": "^18.0.0",
-    "react-confetti": "^5.1.0",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.1",
+    "react-confetti": "^6.0.1",
     "react-countdown-hook": "^1.1.1",
-    "react-dom": "^18.0.0",
+    "react-dnd": "^14.0.4",
+    "react-dnd-html5-backend": "^14.0.2",
+    "react-dom": "^17.0.1",
+    "react-drag-drop-container": "^6.1.1",
+    "react-google-maps": "^9.4.5",
     "react-pure-render": "^1.0.2",
     "react-redux": "^7.2.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "4.0.2",
+    "react-tooltip": "^4.2.21",
     "react-use": "^17.3.1",
     "react-use-faceapi": "^1.0.1",
     "react-webcam": "^6.0.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
+    "styled-components": "^5.3.0",
     "typesafe-actions": "^5.1.0",
     "typescript": "^4.1.3",
     "uuid": "^8.3.2",
@@ -95,14 +101,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
     "@capacitor/cli": "^2.4.7",
     "@types/google-map-react": "^2.1.0",
     "@types/google.maps": "^3.44.2",
     "@types/googlemaps": "^3.43.3",
-    "gh-pages": "^3.2.3",
-    "sass": "^1.88.0"
+    "gh-pages": "^3.2.3"
   },
   "description": "Une aventure proposée par le LLC & Serval",
-  "homepage": "https://scilliva.github.io/ETM/"
+  "homepage": "https://Scilliva.github.io/ETM/"
 }

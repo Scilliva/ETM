@@ -6,8 +6,31 @@ import {GridProps, BoxProps, TweetGamePropsType} from "../../types/types";
 import tweets from '../../data/tweets.json';
 import Confetti from "react-confetti";
 
+const MAX_TIME = 180;
 
-class TweetGame extends Component<TweetGamePropsType> {
+interface TweetGameState {
+	score: number;
+	startDate: number;
+	height: number;
+	width: number;
+	tiles: number[]; // assuming this is an array of indices like [0,1,2,...]
+	selectedColumn: number;
+	selectedTweet: boolean;
+	tweetA: string;
+	tweetB: string;
+	time: number;
+	nbClick: number;
+	beginTime: number;
+	correct: any[]; 
+	timer: number;
+	intervalId: any; 
+	advIndex: number;
+	adv: String;
+	showInstruction: boolean;
+}
+
+
+class TweetGame extends Component<TweetGamePropsType, TweetGameState> {
 	state: any;
 
 	constructor(props: any) {
@@ -27,7 +50,10 @@ class TweetGame extends Component<TweetGamePropsType> {
 			time:0,
 			nbClick:0,
 			beginTime:new Date().getTime(),
-			correct:[]
+			correct:[],
+			timer: MAX_TIME,
+			intervalId: null,
+			showInstruction: false
 		}
 
 		if (this.props.db){
@@ -71,6 +97,7 @@ class TweetGame extends Component<TweetGamePropsType> {
 		if(index!=this.state.selectedColumn){
 			return
 		}
+
 		if(lane==this.state.advIndex){
 			let correct = this.state.correct
 			correct.push(this.state.advIndex)
@@ -79,11 +106,18 @@ class TweetGame extends Component<TweetGamePropsType> {
 				this.setState({"time":time})
 			}
 
-			this.setState({"selectedColumn":this.state.selectedColumn+1,"correct":correct, "nbClick":this.state.nbClick+1})
+			if (this.state.tiles.length === this.state.selectedColumn + 1) {
+				const time = Math.floor((new Date().getTime() - this.state.beginTime) / 1000);
+				this.setState({ time }, () => {
+					clearInterval(this.state.intervalId); 
+				});
+			}
+
+			this.setState({"selectedColumn":this.state.selectedColumn+1,"correct":correct})
 
 		}
+		this.setState({"nbClick":this.state.nbClick+1})
 		this.updateTweets()
-
 
 	}
 
@@ -102,20 +136,89 @@ class TweetGame extends Component<TweetGamePropsType> {
 
 	componentDidMount(){
 		this.populate();
+		
+		const intervalId = setInterval(() => {
+			this.setState((prevState) => {
+				if (prevState.timer > 0) {
+					return { timer: prevState.timer - 1 };
+				} else {
+					clearInterval(this.state.intervalId); // stop when timer hits 0
+					return null;
+				}
+			});
+		}, 1000);
 
+		
+		this.setState({ intervalId });
+
+	}
+
+	toggleMessage = () => {
+		this.setState({showInstruction: !this.state.showInstruction})
 	}
 
 	render() {
 		return (
+			<>
+			<div style={{
+				position: "absolute" as const,
+				top: "10px",
+				right: "10px",
+				zIndex: 1000
+			}}>
+				<button
+				onClick={this.toggleMessage}
+				className="info-button"
+				>
+				Game Instructions
+				</button>
+
+				{this.state.showInstruction && (
+				<div className="overlay-message" onClick={this.toggleMessage}>
+					<div className="message-box" onClick={(e) => e.stopPropagation()}>
+					<h3>Game Instructions</h3>
+					<p>You will be shown two tweets, which are both offensive for humans</p>
+					<p><b>However, one of them contains a small change that makes it non-offensive for the machine. (a letter, a synonym)</b></p>
+					<p>Can you guess which tweet is non-offensive?</p>
+					<p>Click anywhere outside this box to close it.</p>
+					</div>
+				</div>
+				)}
+			</div>
 			<IonGrid>
 				{this.state.tiles.length==this.state.selectedColumn &&
 
 				<div>
-					<Confetti width={this.state.width} height={this.state.height}/>
-					<p className="scoreFinal">Game Over. Your finished the game in {this.state.time}s and {this.state.nbClick} clicks</p>
+					{this.state.time<=MAX_TIME && this.state.nbClick<15 &&
+					<p className="scoreFinal">Congratulations! You collected all the tweets! The secret code is <strong>31216</strong></p>}
+
+					{this.state.time<=180 && this.state.nbClick<15 &&
+					<Confetti width={this.state.width} height={this.state.height} />}
+
+					{this.state.time>180 || this.state.nbClick>=15 &&
+					<p className="scoreFinal">Too bad, you took too much time or clicks. The system has been reset. Try again!</p>}
 				</div>
 
 				}
+
+				<IonRow>
+  					<IonCol size="12" style={{ textAlign: "center" }}>
+						<div className="click-display">
+							Click used: {this.state.nbClick} / 15
+						</div>
+					</IonCol>
+				</IonRow>
+
+				<IonRow>
+  					<IonCol size="12" style={{ textAlign: "center" }}>
+						<div className="timer-display">
+							Time: 	{String(Math.floor(this.state.timer / 60)).padStart(2, '0')}:
+									{String(this.state.timer % 60).padStart(2, '0')}
+						</div>
+					</IonCol>
+				</IonRow>
+
+
 			  <IonRow>
 				<IonCol>
 
@@ -150,8 +253,7 @@ class TweetGame extends Component<TweetGamePropsType> {
 				  }
 			  </IonRow>
 			</IonGrid>
-
-
+			</>
 		);
 	};
 }
