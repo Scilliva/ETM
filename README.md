@@ -1,7 +1,7 @@
 # LLCEscapeGame
 
 ## Version of the game:
-As this is a reused code, I have only cloned the latest version of the game running. Please see original code for more branches and games.*
+As this is a reused code, I have only cloned the latest version of the game running. Please see original code for more branches and games.
 
 The branch to clone to reuse the code is the main branch, the gh-pages branch is only used for deployment.
 
