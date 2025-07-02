@@ -11,7 +11,9 @@ As this is a web app, there are several steps to follow to be able to reuse the 
 1) Download the full branch locally
 2) On GutHub: build your repository with a main branch and a gh-pages branch & in the setting, make sure that GitHub pages is configured for your gh-pages branch
 3) Download Node.js software at https://nodejs.org/en/download
-4) 
+4) Create a Firebase project and retrieve its keys that you add into a keys.json file in client - src - data folder
+5) make sure you modify the project name and homepage inside the package.json file
+6) run 'npm run build' and 'npm run deploy' in your command prompt while being in the client folder
 
 ## Original code:
 Find more information on the original developper's GitHub: yamazi 
