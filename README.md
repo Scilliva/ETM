@@ -1,36 +1,24 @@
 # LLCEscapeGame
 
-## Branch System
+## Version of the game:
+As this is a reused code, I have only cloned the latest version of the game running. Please see original code for more branches and games.*
 
-Each activity/game is built in a different branch, please checkout a new branch before starting your work.
-Please ensure that you code works with torch==1.7.1 and it is recommended to build the adversarial attacks using the torchattacks lib: torchattacks==2.14.1
+The branch to clone to reuse the code is the main branch, the gh-pages branch is only used for deployment.
 
-The **Webserver** branch is used for the API and UI.
+## How to reuse the code:
+As this is a web app, there are several steps to follow to be able to reuse the code and have it deployed.
 
-The **Main** branch will merge the validated activities and connect them to the webserver. Every merge will be preceeded with a pull request to check that everything is compatible :)
+1) Download the full branch locally
+2) On GutHub: build your repository with a main branch and a gh-pages branch & in the setting, make sure that GitHub pages is configured for your gh-pages branch
+3) Download Node.js software at https://nodejs.org/en/download
+4) 
 
-Adriano will set up a docker container for the full app (the main branch) for deployment.
-
-
-
-## Libraries:
-
-### adversarial.js from https://github.com/kennysong/adversarial.js
-
-
-## Age-Fake:
-Age: 21-60 (40 classes)
-Gender: F (female), M (male)
-Attack: pgd, square
-Attack level: 1, 2, 3, 4, 5
-Corresponding epsilon: 4/255, 5/255, 6/255, 7/255, 8/255
-
-Name format:
-Original data: realAge-gender.jpg
+## Original code:
+Find more information on the original developper's GitHub: yamazi 
+follow the link: https://github.com/yamizi/LLCEscapeGame
 
 Adv data: fakeAge-attack-level-gender.jpg
 
 
 ## Ressources:
-
 Face detection from https://github.com/simplysuvi/face-emo
