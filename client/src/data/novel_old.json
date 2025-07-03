@@ -1,0 +1,1024 @@
+{
+  "id": "demo",
+  "name": "Metz - L'aventure Temporelle",
+  "scenes": {
+    "start": {
+      "name": "Explications",
+      "id": "start",
+      "image": "http://jcemetz.fr/wp-content/uploads/2019/02/signature-mail-2019.jpg",
+      "texts": [
+        {
+          "text2": "Ceci est un jeu avec quelques incohérences historiques, elles sont volontaires pour vous faire découvrir le maximum de personnages et lieux marquants de la ville de Metz.",
+          "text": "Bonjour, bienvenue dans le parcours \"Visiter Metz autrement - L'Aventure Temporelle\"  proposé par la JCE de Metz ! Ce parcours devrait durer 1h30. Si vous connaissez le principe, cliquez sur le bouton 'Démarrer l'aventure', sinon, nous allons vous expliquer comment utiliser cette application."
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Demarrer l'aventure",
+          "redirectId": "scene1"
+        },
+        {
+          "text": "M'expliquer comment jouer",
+          "redirectId": "scene_explain"
+        }
+      ]
+    },
+    "scene_explain": {
+      "id": "scene_explain",
+      "visible": 0,
+      "image": "http://jcemetz.fr/wp-content/uploads/2019/02/signature-mail-2019.jpg",
+      "texts": [
+        {
+          "text": "L'application se compose de 4 parties auquelles vous accédez par le menu inférieur. Vous pouvez naviguer librement d'un écran à un autre sans perdre votre avancement."
+        },
+        {
+          "text": "C'est là où vous êtes. C'est celui qui vous donnera les instructions, les énigmes et les informations de la visite.",
+          "nickname": "L'écran 'Aventure'"
+        },
+        {
+          "text": "En cliquant sur le bouton carte, vous accédez à une carte Metz. Sur cette vue, utilisez vos 2 doigts pour glisser la carte",
+          "nickname": "L'écran 'Carte'"
+        }
+        ,
+        {
+          "text": "Vous pouvez aussi cliquer sur le bouton 'sablier' à droite pour alterner entre les cartes des différentes époques, l'époque romaine, le moyen âge, et l'époque contemporaine. Vous en aurez besoin pour résoudre des énigmes et trouver votre chemin ;-)",
+          "nickname": "L'écran 'Carte'"
+        }
+        ,
+        {
+          "text": "Le bouton à gauche vous permet de vous géolocaliser et centrer la carte autour de vous.",
+          "nickname": "L'écran 'Carte'"
+        }
+        ,
+        {
+          "text": "En cliquant sur un lieu de la carte, vous allez poser un petit symbole 'i'. C'est ainsi que vous allez répondre à des énigmes ou indiquer à l'application où vous êtes pour lancer des activités",
+          "nickname": "L'écran 'Carte'"
+        },
+        {
+          "text": "Cet écran vous permet de sauter directement d'une mission à une autre, sans avoir à faire tous les dialogues. Il vous permettra aussi de retrouver les anciennes réponses données par les personnages que vous rencontrer pour vous aider dans la suite",
+          "nickname": "L'écran 'Missions'"
+        },
+        {
+          "text": "Sur cet écran, vous allez retrouver tous les objets que vous avez collectés pendant cette aventure. Ils vous seront utiles dans certaines énigmes.",
+          "nickname": "L'écran 'Inventaire'"
+        }
+        ,
+        {
+          "text": "Essayez maintenant tout ça, et quand vous êtes prets, cliquez sur le bouton 'Démarrer'.",
+          "nickname": "L'écran 'Carte'",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Metz_March_2019_%2832509957637%29.jpg/1280px-Metz_March_2019_%2832509957637%29.jpg"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Démarrer l'aventure",
+          "redirectId": "scene1"
+        }
+      ]
+    },
+    "scene1": {
+      "id": "scene1",
+      "name": "Début du jeu",
+      "image2": "http://www.centre-bethanie.org/images/0_clement_plus.jpg | http://hellboy57.e-monsite.com/medias/images/p12807.jpg",
+      "image": "https://images6.livreshebdo.fr/sites/default/files/assets/images/tourdegaule.jpg",
+      "texts": [
+        {
+          "text": "Gaulle romaine. 3ème Siècle après JC."
+        }
+        ,
+        {
+          "text": "Les orties hautement reconnus pour leurs bénéfices médicinaux, ont été à l’origine d’un phénomène extraordinaire: alors que le bouillon de la ménagère était prêt et chaud sur le feu, le cri assourdissant du Monstre la fit sursauter. Dans son effroi, les différentes plantes qu’elle avait pu recueillir le matin même furent bousculé et quelques feuilles d’orties et d'autres herbes sont tombés dans le bouillon. Ne s’en apercevant pas, elle laisse son fils, Obé pour les intimes, en boire quelques gorgées."
+        }
+        ,
+        {
+          "text": "Ce monstre, c'est le Graoully, qui cherchait des plantes magiques capables de le rendre immortel avant d'attaquer la ville de Divodurum Mediomatricorum. malheureusement, c'est ce bébé gaulois qui a bu la dernière feuille de cette plante magique.",
+          "updatedImage": "http://hellboy57.e-monsite.com/medias/images/p12807.jpg"
+        }
+        ,
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "La région mosellanne possède deux plantes endémiques: la Salicorne de Vic et l'Iberis de Viollet.",
+          "updatedImage": "../../assets/locations/plants.PNG"
+        },
+        {
+          "text": "Le graoully s'est de nouveau échappé de la Seille et menace de ravager la ville de Metz. Votre objectif est de l'arrêter avant qu'il ne devienne trop fort! Rendez vous à la porte de la Cathédrale de Metz pour discuter avec Saint Clément.",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Metz_March_2019_%2832509957637%29.jpg/1280px-Metz_March_2019_%2832509957637%29.jpg"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "C'est bon, j'ai trouvé Saint Clément!",
+          "redirectId": "scene1_stclement"
+        }
+      ]
+    },
+    "scene1_stclement": {
+      "visible": 0,
+      "id": "scene1_stclement",
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "Je suis Saint-clément! Le fondateur de la Cathédrale de Metz [bla bla bla]. Je sens qu'un grand danger menace notre ville! Le démon! Le Graoully s'est échappé! Voulez vous que je vous raconte comment je l'avais capturé?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Oui! Racontez moi!",
+          "redirectId": "scene1_stclement_story"
+        },
+        {
+          "text": "Non, je suis pressé! Dites moi comment l'arreter!",
+          "redirectId": "scene1_stclement_how"
+        }
+      ]
+    },
+    "scene1_stclement_story": {
+      "visible": 0,
+      "id": "scene1_stclement_story",
+      "image": "https://www.blelorraine.fr/wp-content/uploads/2020/12/procession-Graoully.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "L'histoire de la capture du Graoully [bla bla bla]."
+        }
+      ],
+      "buttons": [
+
+        {
+          "text": "Dites moi comment l'arreter!",
+          "redirectId": "scene1_stclement_how"
+        }
+      ]
+    },
+    "scene1_stclement_how": {
+      "visible": 0,
+      "id": "scene1_stclement_how",
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "Vous aurez besoin de 3 objets pour l'arreter: La Gourde du Guerrier, la Plume de l'Erudit et le Cristal de l'Artiste. Chacun de ces objets est caché dans une époque différente."
+        },{
+          "nickname": "Saint-clément",
+          "text": "Vous pouvez les chercher un par un ou en parallèle. "
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Dites m'en plus sur la Gourde!",
+          "redirectId": "scene_rome_0"
+        },
+        {
+          "text": "Que savez vous sur la plume?",
+          "redirectId": "scene_medieval_0"
+        },
+        {
+          "text": "Aidez moi à trouver le Cristal!",
+          "redirectId": "scene_contemporain_0"
+        }
+      ]
+    },
+
+    "scene_rome_0": {
+      "id": "scene_rome_0",
+      "name": "Intro Epoque Romaine",
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "Il y a très longtemps, un dragon monstrueux terrorisait notre ville, j'ai donc fait appel aux meilleurs guerriers de toute la Gaulle pour m'en débarasser. Tous ont eu peur... sauf Un!"
+        },{
+          "nickname": "Saint-clément",
+          "text": "Obelix Le gaulois! Il voulait savoir si le Graoully avait le même goût que le sanglier fumé, et c'est donc lui qui m'a aidé à me débarasser du monstre. Une fois le monstre capturé, j'ai eu pitié de la bête, et j'ai interdit à Obé de le déguster.... Quelle erreur!",
+          "updatedImage": "https://pbs.twimg.com/media/Dxqek8OXQAAD80g?format=jpg&name=large"
+        },{
+          "nickname": "Saint-clément",
+          "text": "Obelix savait que le monstre reviendrait, et il a caché une Gourde de potion magique dans l'ancienne ville de Divodurum. Il vous faut retracer les pas d'Obelix dans la Metz romaine pour la retrouver!",
+          "updatedImage": "https://pbs.twimg.com/media/Dxqek8NXcAAorJ6?format=jpg&name=large"
+        },
+        {
+          "nickname": "Saint-clément",
+          "text": "Allez vers l'onglet Carte, de nouvelles missions vous sont proposés pour vous aider à le retrouver. N'oubliez pas d'activer la carte 'romaine' pour que les indices apparaissent",
+          "updatedImage": "https://pbs.twimg.com/media/Dxqek8OXQAAD80g?format=jpg&name=large"
+        }
+      ],
+      "buttons": [
+
+      ]
+    },
+
+    "scene_rome_main": {
+      "id": "scene_rome_main",
+      "name": "Quête principale - Epoque Romaine",
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "Avez vous retrouvé la Gourde d'Obélix?"
+        }
+      ],
+      "buttons": [
+       {
+          "text": "Oui!",
+          "redirectId": "scene_rome_main1"
+        },{
+          "text": "Non, j'ai besoin de plus d'indices",
+          "redirectId": "scene_rome_main2"
+        }
+      ]
+    },
+
+    "scene_rome_main1": {
+      "id": "scene_rome_main1",
+      "visible": 0,
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "Où est-elle cachée? Scannez le QR code de l'emplacement que vous avez trouvé!"
+        },{
+          "nickname": "Saint-clément",
+          "text": "Bravo! Vous avez retrouvé la Gourde de potion magique!",
+          "updatedImage": "https://i.mmo.cm/is/image/mmoimg/mw-product-max/gourde-de-potion-magique-avec-passant-de-ceinture--mw-133537-1.jpg"
+        }
+      ],
+      "buttons": [
+      ],
+      "game": {
+        "type": "qrcode",
+        "correctAnswer": "Epicerie Fine Saint Louis"
+      }
+    },
+
+    "scene_rome_main2": {
+      "id": "scene_rome_main2",
+      "visible": 0,
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-clément",
+          "text": "Complétez les missions indiques par un petit bonhomme orange sur la carte pour avoir plus d'indices!"
+        }
+      ],
+      "buttons": [
+      ]
+    },
+
+    "scene_rome_mute": {
+      "id": "scene_rome_mute",
+      "name": "Cloche Civile de Metz",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Metz_March_2019_%2832509957637%29.jpg/1280px-Metz_March_2019_%2832509957637%29.jpg",
+      "texts": [
+        {
+          "text": "Comment s'appelle la tour qui renferme une cloche civile de Metz?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "La Tour des Esprits",
+          "redirectId": "scene_rome_mute1"
+        },{
+          "text": "La Tour de Mutte",
+          "redirectId": "scene_rome_mute2"
+        },{
+          "text": "la Tour au Diable",
+          "redirectId": "scene_rome_mute1"
+        }
+      ]
+    },
+
+    "scene_rome_mute1": {
+      "visible": 0,
+      "id": "scene_rome_mute1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Metz_March_2019_%2832509957637%29.jpg/1280px-Metz_March_2019_%2832509957637%29.jpg",
+      "texts": [
+        {
+          "text": "Non, ce n'est pas ça! La tour qu'on cherche se trouve là où vous êtes, à la Cathédrale de Saint Etienne."
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Réessayer!",
+          "redirectId": "scene_rome_mute"
+        }
+      ]
+    },
+
+    "scene_rome_mute2": {
+      "id": "scene_rome_mute2",
+      "visible": 0,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Metz_March_2019_%2832509957637%29.jpg/1280px-Metz_March_2019_%2832509957637%29.jpg",
+      "texts": [
+        {
+          "nickname": "Indice",
+          "text": "Bien joué! Obelix n'est pas loin  [Il est directement au sud des Thermes]"
+        },
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "La Tour de Mutte avec une cloche civile qui servait à prévenir les citadins de potentielles attaques (88m de hauteur, 93m de hauteur avec la flèche) "
+        }
+
+      ],
+      "buttons": [
+
+      ]
+    },
+
+
+    "scene_rome_market": {
+      "id": "scene_rome_market",
+      "name": "Marché couvert",
+      "image": "../../assets/locations/mauricette.jpg",
+      "texts": [
+        {
+          "text": "Bienvenue au marché couvert! Obelix est certainement passé par ici! Il doit être attablé à l'échoppe qui porte cette fresque murale."
+        },{
+          "text": "Saurez-vous la retrouver? Complétez le texte puis appuyez sur la flèche pour continuer."
+        },{
+          "text": "Bien joué! Chez Mauricette est l'une échoppes de produits lorrains les plus connues de Metz. N'hésitez pas à discuter avec les commerçants pour répondre à la prochaine question",
+          "updatedImage": "../../assets/locations/mauricette2.jpg"
+        }
+      ],
+      "buttons": [
+{
+          "text": "C'est bon, je suis prêt!",
+          "redirectId": "scene_rome_market1"
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "Chez Mauricette"
+      }
+    },
+
+    "scene_rome_market1": {
+      "visible": 0,
+      "id": "scene_rome_market1",
+      "image": "../../assets/locations/mauricette2.jpg",
+      "texts": [
+        {
+          "text": "Qu'est ce que le Fuseau Lorrain?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Un saucisson fumé",
+          "redirectId": "scene_rome_market2"
+        },
+        {
+          "text": "Un petit fromage de lait de vache",
+          "redirectId": ""
+        }
+      ]
+    },
+
+
+
+    "scene_rome_market2": {
+      "visible": 0,
+      "id": "scene_rome_market2",
+      "image": "http://charculor.fr/wp-content/uploads/2015/09/Fuseau-Lorrain-a-lancienne-PES.jpg",
+      "texts": [
+        {
+          "nickname": "Indice",
+          "text": "Bien joué! Obelix n'est pas loin [Il est près de l'ancien cours de la Seille]"
+        },
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "Le fuseau lorrain est un saucisson moelleux et maigre embossé dans un boyau naturel et délicatement fumé au sapin. "
+        }
+
+      ],
+      "buttons": [
+
+      ]
+    },
+
+  "scene_rome_chevrement": {
+      "name": "Rue du Chèvrement",
+      "id": "scene_rome_chevrement",
+      "image": "https://cdn-s-www.republicain-lorrain.fr/images/66B31536-785B-4495-8783-BE2B5B15C848/NW_raw/photo-dr-thomas-wilwert-1604075475.jpg",
+      "texts": [
+        {
+          "text": "Obelix est probablement en quetes de provisions! Rendez-vous rue de Chèvrement. Au deuxième étage d'un des batiments, vous pouvez retrouver cette sculpture du Graoully. A quel numéro correspond cette maison, dite 'au serpent'?"
+        },
+        {
+          "text": "Bien joué! Continuez sur la rue de Chèvrement. Au bout, tournez à droite vers la rue de la Boucherie Saint Georges. Vous arrivez devant le 'Grenier de Chèvremont'. Savez vous à quoi servait ce batiment crénelé?",
+          "updatedImage": "../../assets/locations/cheverement.PNG"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "A stocker des provisons",
+          "redirectId": "scene_rome_chevrement1"
+        },
+        {
+          "text": "A vendre des chèvres",
+          "redirectId": ""
+        },
+        {
+          "text": "A protéger la cité",
+          "redirectId": ""
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "10"
+      }
+    },
+    "scene_rome_chevrement1": {
+      "visible": 0,
+      "id": "scene_rome_chevrement1",
+      "image": "../../assets/locations/cheverement.PNG",
+      "texts": [
+        {
+          "nickname": "Indice",
+          "text": "Tout à fait! Mais Obelix est déjà loin d'ici. [Il est probablement en train de se goinfrer de spécialités lorraines]."
+        },
+
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "3 fragments de l'Enceine Romaine sont encore conservés aujourd'hui à Metz. L'un se trouve derrière le Grenier de Chèvrement, le second dans les jardins du Palais du Gouverneur et le dernier sur la façade de l'Eglise Saint-Martin.",
+          "updatedImage": "../../assets/locations/cheverement2.PNG"
+        }
+
+      ],
+      "buttons": [
+      ]
+    },
+
+    "scene_rome_kawa": {
+      "name": "Place de Chambre",
+      "id": "scene_rome_kawa",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Place_de_Chambre_-_Metz_57.JPG/1920px-Place_de_Chambre_-_Metz_57.JPG",
+      "texts": [
+        {
+          "text": "Obelix est un grand amateur de boissons chaudes. On vous invite à descendre le long de la Cathédrale jusqu'à la Place de Chambre en quête d’une boutique de thé/café. On dit en plus qu’Obé raffole d’une spécialité quelque peu déroutante au nom exotique. Saurez-vous deviner quelle est-elle?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Je sais!",
+          "redirectId": "scene_rome_kawa1"
+        },
+        {
+          "text": "J'ai besoin d'un autre indice",
+          "redirectId": "scene_rome_kawa2"
+        }
+      ]
+    },
+
+    "scene_rome_kawa2": {
+      "visible": 0,
+      "id": "scene_rome_kawa2",
+      "image": "../../assets/locations/kawa-tea.PNG",
+      "texts": [
+        {
+          "text": "Petit indice, c’est a priori le nom du café Robusta le plus cher au monde, demandez à la gérante du Kawa-Tea, gardienne de la réponse et de ses explications!"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Je sais maintenant!",
+          "redirectId": "scene_rome_kawa1"
+        }
+      ]
+    },
+
+    "scene_rome_kawa1": {
+      "visible": 0,
+      "id": "scene_rome_kawa1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Place_de_Chambre_-_Metz_57.JPG/1920px-Place_de_Chambre_-_Metz_57.JPG",
+      "texts": [
+        {
+          "text": "De quoi Obelix raffole-t-il?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Kopi Luwak",
+          "redirectId": "scene_rome_kawa3"
+        },
+        {
+          "text": "Pacamara",
+          "redirectId": "scene_rome_kawa2"
+        },
+        {
+          "text": "Peaberry",
+          "redirectId": "scene_rome_kawa2"
+        }
+      ]
+    },
+
+    "scene_rome_kawa3": {
+      "visible": 0,
+      "id": "scene_rome_kawa3",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Place_de_Chambre_-_Metz_57.JPG/1920px-Place_de_Chambre_-_Metz_57.JPG",
+      "texts": [
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "Bien joué! Le nom de la Place de Chambre provient des chambres particulières édifiées par les chanoines de la cathédrale au XIe siècle, dès lors la place sera vite appelée Ad Cameras, qui sera plus tard traduit en français par en Chambres. Pendant l'annexion allemande de 1870, on la nomme Kammerplatz (\"place de Chambre\") et Fischmarkplatz (\"place du marché au poisson\") pendant celle de 1940. "
+        },
+        {
+
+          "text": "Obélix avait souvent l’habitude de se reposer au pied du 3e arbre de la Place de Chambre. En sortant de la Boutique de Café/Thé, tournez à droite et rendez-vous au 3e arbre de la Place. Vous y trouverez une plaque ! ]"
+        }
+
+      ],
+      "buttons": [
+{
+          "text": "J'y suis",
+          "redirectId": "scene_rome_kawa4"
+        }
+      ]
+    },
+
+    "scene_rome_kawa4": {
+      "visible": 0,
+      "id": "scene_rome_kawa4",
+      "image": "../../assets/locations/plaque_chambre_cache.jpg",
+      "texts": [
+        {
+          "text": "Tiens, c’est étonnant que sous cette plaque se trouve quelque chose de vital pour l’homme. Mais à quoi correspond cette plaque ? Trouvez le mot qui a été caché sur cette image (en majuscules)?"
+        },{
+          "nickname": "Indice",
+          "text": "Bien joué! Obelix n'est pas loin  [Il est dans une épicerie fine!]",
+          "updatedImage": "../../assets/locations/plaque_chambre.jpg"
+        }
+      ],
+      "buttons": [
+
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "PUITS"
+      }
+    },
+
+
+    "scene_rome_temple": {
+      "name": "Temple Neuf",
+      "id": "scene_rome_temple",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Temple_Neuf_de_Metz_und_Pont_des_Roches.jpg/220px-Temple_Neuf_de_Metz_und_Pont_des_Roches.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-Clément",
+          "text": "J'ai entendu parler d’un endroit où Obé a fait la rencontre d’une jolie demoiselle : cadre idylique pour un premier baiser avec la douce Falbala. Rendez-vous à l'interieur pour la suite de l'énigme"
+        },
+        {
+          "text": "Vous êtes au Temple Neuf. Ce batiment construit en 1901 abrite un orgue entièrement mécanique. Cet orgue d’Ernest Mühleisen est le meilleur instrument néoclassique de la ville, régulièrement utilisé pour les concours du Conservatoire national de région et pour de nombreux récitals, donnés par des organistes réputés. Combien de jeux possède cet orgue?",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Temple_Neuf_de_Metz_und_Pont_des_Roches.jpg/220px-Temple_Neuf_de_Metz_und_Pont_des_Roches.jpg"
+        },
+        {
+          "nickname": "Indice",
+          "text": "Bien joué! Obelix est de l'autre côté de la vieille ville, au Sud Est des remparts romains!",
+          "updatedImage": "http://temples.free.fr/photos_orgues/metz_org.jpg"
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "52"
+      },
+      "buttons": []
+    },
+
+    "scene_moderne_cathedrale": {
+      "name": "Cathédrale",
+      "id": "scene_moderne_cathedrale",
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-Clément",
+          "text": "Je pense pouvoir vous aider à retrouver le Cristal de l'Artiste. Je sais que son créateur a un lien fort avec les Eglises de Metz. Mais avant de vous aider, je dois savoir si vous êtes bien l'Elu(e) de la Légende!"
+        },
+        {
+          "nickname": "Saint-Clément",
+          "updatedImage": "../../assets/locations/autel.png",
+          "text": "Pour me prouver votre valeur, retrouvez cet autel dans ma Cathédrale. Il vous indiquera qui sont les deux saints qui protègent la ville et la Cathédrale!"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Saint Etienne & Saint Paul",
+          "redirectId": "scene_moderne_cathedrale2"
+        },
+        {
+          "text": "Saint Etienne & Saint Clément",
+          "redirectId": ""
+        },
+        {
+          "text": "Saint Paul & Saint Clément",
+          "redirectId": ""
+        }
+      ]
+    },
+
+    "scene_moderne_cathedrale2": {
+      "visible": 0,
+      "id": "scene_moderne_cathedrale2",
+      "image": "http://www.centre-bethanie.org/images/0_clement_plus.jpg",
+      "texts": [
+        {
+          "nickname": "Saint-Clément",
+          "text": "Bien joué! C'est bien 'Saint Etienne & Saint Paul'! Vous avez l'etoffe d'un Héros! Mais avez vous le Sens Artistique suffisant pour résoudre la prochaine énigme?"
+        },
+        {
+          "nickname": "Saint-Clément",
+          "updatedImage": "../../assets/locations/vitrail.png",
+          "text": "Dirigez vous près du Coeur et montez les marches. Observez les vitraux aux tons bleus de Marc Chagall, à l’entrée du déambulatoire. Ce sont là différentes scènes de l'Ancien Testament"
+        },
+        {
+          "nickname": "Saint-Clément",
+          "updatedImage": "../../assets/locations/vitrail.png",
+          "text": "Il vous faut les remettre dans l'ordre de gauche à droite. Le numéro 1 est le vitrail le plus à gauche et le numéro 7 le plus à droite. Rentrez le code à 7 chiffre puis cliquez sur la flèche pour continuer"
+        }
+        ,
+        {
+          "nickname": "Indice!",
+          "updatedImage": "https://www.biography.com/.image/t_share/MTE1ODA0OTcxNTgzNDQwMzk3/marc-chagall-9243488-2-402.jpg",
+          "text": "Bravo Bien joué! Le Cristal que vous recherchez est dans un lieu de culte! Et l'Artiste qui l'a conçu est né seulement 2 ans après Marc Chagall, à qui l'on doit les vitraux de la Cathédrale Saint Etienne!"
+        }
+      ],
+      "buttons": [
+
+
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "1537264"
+      }
+    },
+
+    "scene_moderne_verlaine": {
+      "name": "Maison Paul Verlaine",
+      "id": "scene_moderne_verlaine",
+      "image": "../../assets/locations/poemes_saturniens.jpg",
+      "texts": [
+        {
+          "text": "A qui doit-on ce recueil de poésie?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Paul Verlaine",
+          "redirectId": "scene_moderne_verlaine2"
+        },{
+          "text": "Victor Hugo",
+          "redirectId": ""
+        },
+        {
+          "text": "Charles Baudelaire",
+          "redirectId": ""
+        }
+      ]
+    },
+
+    "scene_moderne_verlaine2": {
+      "visible": 0,
+      "id": "scene_moderne_verlaine2",
+      "image": "https://img-4.linternaute.com/_8mi-u4VF8TK4UO94hNZBwyjcxs=/1240x/smart/c2d147ca8eb44b8cb637cd345c82dfd2/ccmcms-linternaute/10994886.jpg",
+      "texts": [
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "Paul Verlaine est un écrivain et poète français né à Metz le 30 mars 18443 et mort à Paris le 8 janvier 1896. Sa maison natale est toujours accesible Rue Haute Pierre."
+        },
+        {
+          "text": "Qu'est il accroché au dessus de la porte de cette maison?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Une fleur de Lys",
+          "redirectId": ""
+        },
+        {
+          "text": "Une tête de dragon",
+          "redirectId": ""
+        },
+        {
+          "text": "Une tête de femme",
+          "redirectId": "scene_moderne_verlaine3"
+        }
+      ]
+    },
+    "scene_moderne_verlaine3": {
+      "visible": 0,
+      "id": "scene_moderne_verlaine3",
+      "image": "../../assets/locations/maison_verlaine.png",
+      "texts": [
+        {
+          "nickname": "Indice!",
+          "text": "Bien joué! Vous avez trouvé! Le cristal que vous recherchez n'est pas loin d'une des portes de Metz!"
+        }
+      ],
+      "buttons": [
+
+      ]
+    },
+
+    "scene_moderne_esplanade": {
+      "name": "Esplanade",
+      "id": "scene_moderne_esplanade",
+      "image": "https://www.tourisme-lorraine.fr/sitlorimg/1920/0/aHR0cHM6Ly93d3cuc2l0bG9yLmZyL3Bob3Rvcy84MzgvODM4MTYyMjUyXzEuSlBH.jpg",
+      "texts": [
+        {
+          "text": "Vous trouverez dans cet esplanade une statue liée à la poésie saturnienne. Flashez le QR code qui y est associé"
+        },
+        {
+          "text": "Bien joué! Rendez-vous à sa maison natale pour trouver un indice important pour votre quête du Cristal!"
+        }
+      ],
+      "buttons": [
+
+      ],
+      "game": {
+        "type": "qrcode",
+        "correctAnswer": "Statue de Paul Verlaine"
+      }
+    },
+
+
+    "scene_moderne_stpierre": {
+      "name": "Saint Pierre aux Nonnais",
+      "id": "scene_moderne_stpierre",
+      "image": "../../assets/locations/saint_maximin.png",
+      "texts": [
+        {
+          "text": "Vous êtes devant l'Eglise Saint-Pierre-aux-Nonnains. Retrouvez ce bout de mur."
+        },
+        {
+          "text": "Ce mur comporte des parties qui datent de différentes époques. A quelle époque remonte la partie basse?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Empire Romain",
+          "redirectId": "scene_moderne_stpierre2"
+        },
+        {
+          "text": "Royaume d'Austrasie",
+          "redirectId": ""
+        }
+        ,
+        {
+          "text": "Empire Allemand",
+          "redirectId": ""
+        }
+      ]
+    },
+
+    "scene_moderne_stpierre2": {
+      "visible": 0,
+      "id": "scene_moderne_stpierre2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Metz_Saint_Pierre_R02.jpg/1024px-Metz_Saint_Pierre_R02.jpg",
+      "texts": [
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "C'est ça! L’église Saint-Pierre-aux-Nonnains est un édifice religieux datant de la fin du IVe siècle. C'est une des plus vieilles églises du monde, et la plus vieille église de France. "
+        },
+        {
+          "nickname": "Indice!",
+          "text": "L'Artiste que vous recherchez a laissé de mangifiques traces dans l'ancien quartier d'Outre-Seille!"
+        }
+      ],
+      "buttons": [
+
+      ]
+    },
+
+    "scene_moderne_gouverneur": {
+      "name": "Palais du Gouverneur",
+      "id": "scene_moderne_gouverneur",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Palais_du_Gouverneur_Metz_08.JPG",
+      "texts": [
+        {
+          "text": "Bienvenue au Palais du Gouverneur. Appelé autrefois General-Kommando, ce batiment est une résidence édifiée à Metz, entre 1902 et 1905, pour servir de pied-à-terre à l’empereur Guillaume II."
+        },
+        {
+          "text": "Observez bien la façade. Combien de blasons sont peints sur les fenetres de la façade?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "10",
+          "redirectId": ""
+        },
+        {
+          "text": "18",
+          "redirectId": ""
+        },
+        {
+          "text": "34",
+          "redirectId": "scene_moderne_gouverneur2"
+        },
+        {
+          "text": "50",
+          "redirectId": ""
+        }
+      ]
+    },
+
+    "scene_moderne_gouverneur2": {
+      "visible": 0,
+      "id": "scene_moderne_gouverneur2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Palais_du_Gouverneur_Metz_08.JPG",
+      "texts": [
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "Tout à fait! Et le blason de Metz est celui qui a son côté gauche blanc et son côté droit noir. Il est situé juste au-dessus de la porte d’entrée. De plus, Il existe encore un bout du mur romain d’antan dans le jardin du Palais."
+        },
+        {
+          "text": "A partir de quelle date ce batiment a-t-il été construit? La réponse se situe au sommet du fronton d’entrée"
+        }
+        ,
+        {
+          "nickname": "Indice",
+          "text": "Bien joué! On doit à l'Artiste que tu recherches la phrase suivante “Le bonheur d’un ami nous enchante. Il nous ajoute. Il n’ôte rien. Si l’amitié s’en offense, elle n’est pas.”"
+        }
+      ],
+      "buttons": [
+      ]
+      ,
+      "game": {
+        "type": "input",
+        "correctAnswer": "1902"
+      }
+    },
+    "scene_moderne_serpennoise": {
+      "name": "Porte Serpennoise",
+      "id": "scene_moderne_serpennoise",
+      "image": "../../assets/locations/portes.png",
+      "texts": [
+        {
+          "text": "Vous êtes en face de la porte Serpennoise. Saurez vous la retrouver sur cette image? Répondez par la bonne lettre"
+        },
+        {
+          "nickname": "Le saviez-vous?",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/5/56/Porte_Serpenoise_01.jpg",
+          "text": "Bien joué! Vous avez identifié la porte Serpenoise... ou pas! En effet, La porte Serpenoise actuelle n'est pas l'originale. La porte Serpenoise médiévale fut démolie en 1561 suite au siège de 1552. Celle en face de vous est reconstruite en 1852, presque au même emplacement. Le Cristal que vous cherchez se trouve non loin d'une autre Porte"
+        }
+      ],
+      "buttons": [
+
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "B"
+      }
+    },
+
+
+    "scene_moderne_gare": {
+      "name": "Gare de Metz",
+      "id": "scene_moderne_gare",
+      "image": "../../assets/locations/gare.PNG",
+      "texts": [
+        {
+          "text": "Vous voilà à la Gare de Metz. La plus belle gare de France. Retrouvez ce Chevalier à l’angle de la Gare. Le blason de quelle cité est représenté sur son bouclier?"
+        },{
+          "nickname": "Indice",
+          "text": "Bien joué! C'est bien le blason de la ville de Metz. Le cristal que tu recherches est utilisé pour orner des fenetres de batiments prestigieux",
+          "updatedImage": "../../assets/locations/gare2.PNG"
+        }
+      ],
+      "buttons": [
+
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "Metz"
+      }
+    },
+
+
+
+    "scene_moderne_maximin": {
+      "name": "Eglise Saint Maximin",
+      "id": "scene_moderne_maximin",
+      "image": "https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1369&q=80",
+      "texts": [
+        {
+          "text": "A faire"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "redirectId": "scene2"
+        },
+        {
+          "text": "",
+          "redirectId": "start"
+        }
+      ]
+    },
+
+
+
+
+
+    "scene_medieval_arsenal": {
+      "name": "Arsenal",
+      "id": "scene_medieval_arsenal",
+      "image": "../../assets/locations/arsenal.PNG",
+      "texts": [
+        {
+          "text": "Rendez-vous au sommet de ces marches pour démarrer l'aventure. Quel est le bâtiment situé devant vous ?"
+        },
+        {
+          "nickname": "Le saviez-vous?",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/5/56/Porte_Serpenoise_01.jpg",
+          "text": "Bien joué! Vous êtes face au dernier vestige de la commanderie des Templiers de Metz. Sa forme\noctogonale est caractéristique des édifices des Templiers. Puis sera finalement détruite en 1904 par le maréchal de Vieilleville afin de laisser place à la construction d'une citadelle. Seul la chapelle subsistera jusqu'à nos jours."
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Continuer",
+          "redirectId": "scene_medieval_arsenal2"
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "chapelle"
+      }
+    },
+
+    "scene_medieval_arsenal2": {
+      "visible": 0,
+      "id": "scene_medieval_arsenal2",
+      "image": "../../assets/locations/puzzle.png",
+      "texts": [
+        {
+          "text": "Vous semblez bien connaitre maintenant la ville. Pour continuez, reconstituez ce puzzle. Entrez les numéros des pièces du puzzle assemblé, avec une virgule entre chaque nombre. De gauche à droite puis de haut en bas. Vous pouvez utiliser ce lien pour vous aider: https://www.jigsawplanet.com/?rc=play&pid=239bc95aa66d"
+        },
+        {
+          "nickname": "Le saviez-vous?",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Palatinatus_Rheni_%28Merian%29_249.svg",
+          "text": "Bien joué! C'est une carte date de 1645!"
+        }
+      ],
+      "buttons": [
+
+      ],"game": {
+        "type": "input",
+        "correctAnswer": "3,8,10,4,1,9,5,7,2,6,12,11"
+      }
+    },
+
+    "scene_medieval_gouverneur": {
+      "name": "Palais du Gouverneur",
+      "id": "scene_medieval_gouverneur",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Palais_du_Gouverneur_Metz_08.JPG",
+      "texts": [
+        {
+          "text": "La beauté d'une cité attire forcement les convoitises. Mais, les habitants surveillent leur magnifique cité. Comme ce matin de 1473 ou un boulanger sauva la ville. Fatigué d'un long siège, le duc de Lorraine fait cacher ses hommes dans des tonneaux afin de les faire entrer dans la ville sur la charrette d'un marchand. Ils bloquent la porte Serpenoise. Le boulanger Harrelle, témoin de la scène vous envoie écrire un message pour alerter les gardes et protéger la ville."
+        },
+        {
+          "text": "Ce message est encore visible aujourd'hui sous forme de QR-Code près du Palais du Gouverneur. Retrouvez le pour continuer l'aventure!"
+        },
+        {
+         "text": "Bien joué! Maintenant que vous avez obtenu le message, il faut le transmettre aux gardes de la Tour Camoufle! Pas n'importe quel garde. Rendez-vous à la cloche de la Tour Camoufle pour savoir a qui il faut le porter"
+        }
+      ],
+      "buttons": [
+
+      ],
+      "game": {
+        "type": "qrcode",
+        "correctAnswer": "Camoufle"
+      }
+    },
+
+    "scene_medieval_camoufle": {
+      "name": "Tour Camoufle",
+      "id": "scene_medieval_camoufle",
+      "image": "https://www.tourisme-lorraine.fr/sitlorimg/1920/0/aHR0cHM6Ly93d3cuc2l0bG9yLmZyL3Bob3Rvcy84MzgvODM4MTQwMTYzXzQuanBn.jpg",
+      "texts": [
+        {
+          "nickname": "Gardes",
+          "text": "Halte là! Qui êtes vous?"
+        },
+        {
+          "nickname": "",
+          "text": "Je porte un message important du Palais du Gouverneur. Il me faut passer"
+        },
+        {
+          "nickname": "Gardes",
+          "text": "A qui devez-vous le transmettre?"
+        },
+        {
+          "nickname": "Le saviez-vous?",
+          "text": "Bien joué! C'est bien moi. Jacob de Castel dit Camoufle merci pour ce message j'envoie mes hommes pour stopper l'ennemi"
+        }
+      ],
+      "buttons": [
+
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "Jacob de Castel"
+      }
+    }
+  }
+}

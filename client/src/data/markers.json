@@ -1,0 +1,73 @@
+{
+  "id": "",
+  "name": "",
+  "markers":
+[
+
+
+  {
+    "label": "(A) Melusine",
+    "lat": 49.61091129386958,
+    "lng":6.135948720891681,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_melusine",
+    "scene": "scene_melusine"
+
+  },
+  {
+    "label": "(B) Statue de la Grande Duchesse",
+    "lat": 49.60983642303959,
+    "lng": 6.132414529798652,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_duchesse",
+    "scene": "scene_duchesse"
+  }
+
+  ,
+  {
+    "label": "(C) Ascenseur Panoramique",
+    "lat": 49.61534204487956,
+    "lng": 6.129701549326433,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_pafenthal",
+    "scene": "scene_pafenthal"
+  }
+
+  ,
+  {
+    "label": "(D) Monument du Souvenir",
+    "lat": 49.60926302160919,
+    "lng":  6.129370597767566,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_souvenir",
+    "scene": "scene_souvenir"
+  }
+
+  ,
+  {
+    "label": "(E) Fort Thungen",
+    "lat": 49.61628774089084,
+    "lng":  6.13910236279895,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_thungen",
+    "scene": "scene_thungen"
+  }
+,
+  {
+    "label": "(1) Auberge de Jeunesse",
+    "lat": 49.61323222584585,
+    "lng":  6.137962075342113,
+    "type": "main",
+    "time": "moderne",
+    "id": "moderne_auberge",
+    "scene": "scene_auberge"
+  }
+
+]
+}
+

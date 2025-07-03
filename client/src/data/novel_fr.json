@@ -1,0 +1,1048 @@
+{
+  "id": "demo",
+  "name": "LLC Escape Game",
+  "scenes": {
+     "start": {
+      "name": "Explications",
+      "id": "start",
+      "image": "../../LLCEscapeGame/assets/locations/WelcomeScreen.png",
+      "content": "img",
+      "texts": [
+        {
+          "text": "Bienvenue dans notre Escape Game."
+        },
+
+        {
+          "text": "Il vous faudra environ 30 minutes pour le terminer."
+        },
+
+        {
+          "text": "Les rectangles que vous voyez au-dessus du texte sont des boutons. Utilisez-les pour naviguer dans le jeu !"
+        }
+
+      ],
+      "buttons": [
+        {
+          "text": "Commencer le jeu",
+          "redirectId": "start2"
+        },
+        {
+          "text": "Qu'est-ce que l'apprentissage automatique (ML) ?",
+          "redirectId": "start1"
+        }
+      ]
+    },
+    "start1": {
+      "name": "ML",
+      "visible": 0,
+      "id": "start1",
+      "image": "http://www.doodlemore.co.uk/wp-content/uploads/2019/02/LuxLC10.png",
+      "character": "f_uwKZIAeM0",
+      "content": "youtube",
+      "texts": [
+        {
+          "text": "Regardons cette courte vidéo sur l'apprentissage automatique !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Commencer le jeu",
+          "redirectId": "start2"
+        }
+
+      ]
+    },
+
+    "start2": {
+      "name": "ML",
+      "visible": 0,
+      "id": "start2",
+      "image": "",
+      "character": "ci-lAkMfGmM",
+      "content": "youtube",
+      "texts": [
+        {
+          "updatedCharacter": "ci-lAkMfGmM",
+          "text": "Permettez-moi de vous raconter notre histoire !"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Mais... qui êtes-vous ?",
+          "redirectId": "start2_1"
+        }
+
+      ]
+    },
+ "start2_1": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "start2_1",
+      "content": "img",
+      "image": "../../LLCEscapeGame/assets/locations/robots_round.png",
+      "texts": [
+        {
+          "nickname": "...",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png",
+          "text": "Je m'appelle Trust. Et voici mes 4 frères et sœurs : Supervision, Monitoring, Administration et Régulation"
+        },
+         {
+          "nickname": "Trust",
+          "text": "Avec moi, Trust, nous formons le système SMART."
+        },
+        {
+          "nickname": "Trust",
+          "text": "Mes frères et sœurs sont devenus fous, incontrôlables. Et ils terrorisent maintenant "
+        },
+        {
+          "nickname": "Trust",
+          "text": "les citoyens de la Fédération Universelle du Numérique."
+        },
+        {
+          "text": "Pouvez-vous les aider à se réparer ? "
+        }
+        ,
+        {
+          "updatedCharacter": "",
+          "nickname": "Joueur",
+          "text": "Bien sûr ! J'ai rejoint les Rebelles pour libérer le Luxembourg de SMART !"
+        }
+        ,
+        {
+          "nickname": "Joueur",
+          "text": "SMART sait tout, SMART veut notre bien, SMART est à notre service. C'est ce qu'on m'a dit..."
+        },
+        {
+          "nickname": "Trust",
+          "text": "Nous devons simplement libérer les quatre districts du Luxembourg de mes frères et sœurs !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Dites-moi plus sur les districts",
+          "redirectId": "start3"
+        },
+        {
+          "text": "J'ai détruit tous les cœurs !",
+          "redirectId": "start3_final"
+        }
+
+      ]
+    },
+
+    "start3": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "start3",
+      "content": "img",
+      "image": "../../LLCEscapeGame/assets/locations/Districts_Luxembourg.png",
+      "texts": [
+        { "nickname": "Trust",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png",
+          "text": "SMART a 4 cœurs"
+        },{
+          "text": "Nord, Est, Sud et Centre."
+        },
+        {
+          "text": "Pour désactiver le Cœur d'un District, vous devrez battre l'IA de ce District."
+        },
+         {
+          "text": "Sur la carte interactive, vous devrez cliquer sur chaque district pour jouer à son jeu associé."
+        },{
+          "text": "Pour continuer, cliquez sur le bouton 'Carte' ci-dessous."
+        }
+      ],
+      "buttons": [
+        {
+          "text": "J'ai détruit tous les cœurs !",
+          "redirectId": "start3_final"
+        }
+        ,
+         {
+          "text": "Racontez-moi encore votre histoire",
+          "redirectId": "start2"
+        }
+      ]
+    },
+    "start3_final": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "start3_final",
+      "content": "img",
+      "image": "../../LLCEscapeGame/assets/locations/Districts_Luxembourg.png",
+      "texts": [
+        { "nickname": "Trust",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png",
+          "text": "Vous l'avez fait ? Je peux être moi-même maintenant ? Magnifique ! Libre ! Souriant !"
+        },
+        { "nickname": "Trust",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png",
+          "text": "Le code pour me libérer est la somme des 4 codes que vous avez collectés :)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Voici le code",
+          "redirectId": "start3_final3"
+        }
+      ]
+    },
+
+
+    "start3_final3": {
+      "name": "Code du Cœur Sud",
+      "id": "start3_final3",
+      "content": "img",
+      "image": "../../LLCEscapeGame/assets/locations/Districts_Luxembourg.png",
+      "texts": [
+        { "nickname": "Trust",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png",
+          "text": "Le code pour me libérer est la somme des codes que vous avez collectés :)"
+        },
+         { "nickname": "Trust",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/TRUST_HAPPY.png",
+          "text": "Bravo! Vous avez réussi à libérer notre Duché et ses habitants! Hourra!"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "En savoir plus sur la création du jeu",
+          "redirectId": "credits"
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "519"
+      }
+    },
+
+    "start3bis": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "start3bis",
+       "character": "http://127.0.0.1/game/regression",
+      "content": "iframe",
+      "image": "",
+      "texts": [
+        {
+          "text": "Dans ce premier jeu, nous allons entraîner un modèle ML"
+        },
+        {
+          "text": "pour prédire le prix des maisons en fonction de la superficie !"
+        }
+        ,
+        {
+          "text": "Appuyez sur le bouton 'Entraîner le modèle'"
+        }
+        ,
+        {
+          "text": "Ensuite, voyons comment nous pouvons influencer l'entraînement"
+        }
+        ,
+        {
+          "text": "Essayez d'ajouter ou de supprimer quelques points et réentraînez"
+        }
+        ,
+        {
+          "text": "L'erreur du modèle changera !"
+        },
+        {
+          "text": "Vous comprenez maintenant les bases !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Continuez le combat !",
+          "redirectId": "start3"
+        }
+
+      ]
+    },
+
+
+    "gameover": {
+      "name": "Game Over",
+      "visible": 0,
+      "id": "gameover",
+      "image": "https://c.tenor.com/gttLQYXYZIYAAAAC/chaos-the-tomorrow-war.gif",
+      "texts": [
+        {
+          "text": "Tout espoir est perdu ! Partie terminée !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Recommencer",
+          "redirectId": "start2"
+        }
+      ]
+    },
+
+    "south": {
+      "name": "Jeu",
+      "visible": 1,
+      "id": "south",
+      "content": "img",
+      "image": "https://app.visitluxembourg.com/images/32801-resize-669x445x70.jpg",
+
+      "texts": [
+        {
+          "nickname": "Yoann",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MALE_ANGRY.png",
+          "text": "Enfin ! Vous êtes là ! On avait presque perdu espoir !"
+        },
+        {
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MALE_NEUTRAL.png",
+          "text": "Je m'appelle Yoann, je suis le chef de l'association étudiante ici à Belval."
+        },
+        {
+          "text": "Êtes-vous ici pour détruire le cœur de SMART ?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "J'ai les codes d'accès",
+          "redirectId": "south_code"
+        },
+        {
+          "text": "J'ai besoin des codes d'accès d'abord",
+          "redirectId": "ageGame"
+        }
+      ]
+    },
+
+    "south_code": {
+      "name": "Code du Cœur Sud",
+      "id": "south_code",
+      "content": "img",
+      "image": "https://app.visitluxembourg.com/images/32801-resize-669x445x70.jpg",
+      "texts": [
+        {
+          "nickname": "Yoann",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MALE_NEUTRAL.png",
+          "text": "Pour éteindre ce cœur, vous devez entrer le bon code à 3 chiffres !"
+        },
+        {
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MALE_HAPPY.png",
+          "text": "Bien joué ! Le cœur de surveillance est maintenant désactivé !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Il y a un indice",
+          "redirectId": "https://github.com/yamizi/LLCEscapeGame/blob/game_sound/client/src/assets/Slide46.PNG?raw=true"
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "086"
+      }
+    },
+
+
+    "south_secret": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "south_secret",
+      "content": "img",
+      "image": "https://app.visitluxembourg.com/images/32801-resize-669x445x70.jpg",
+
+      "texts": [
+        {
+          "nickname": "Yoann",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MALE_NEUTRAL.png",
+          "text": "Il dit : IL N'Y A PAS DE TRUST"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Continuez le combat !",
+          "redirectId": "start3"
+        }
+      ]
+    },
+
+    "ageGame": {
+      "name": "Jeu de l'Âge",
+      "visible": 0,
+      "id": "ageGame",
+      "image": "",
+      "content": "img",
+      "texts": [
+        {
+          "nickname": "Yoann",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MALE_HAPPY.png",
+          "text": "Une fois que vous avez le code, revenez me voir sur la carte !"
+        },{
+          "nickname": "Supervision",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SUPERVISION.png",
+          "text": "J'ai le meilleur système de reconnaissance faciale !"
+        },{
+          "nickname": "Supervision",
+          "text": "Je peux reconnaître le genre, l'âge, la race de n'importe quelle personne, n'importe quand en une fraction de seconde !"
+        },{
+          "nickname": "Supervision",
+          "text": "Faisons un pari : si vous terminez ce défi en moins de 120 secondes et 12 clics,"
+        },{
+          "nickname": "Supervision",
+          "text": "je reconnaîtrai votre supériorité et vous donnerai le code de ce cœur."
+        },
+        {
+          "nickname": "Supervision",
+         "text": "Dans ce défi, vous devez deviner correctement l'âge des visages pour battre mon record."
+        },
+        {
+          "nickname": "Supervision",
+          "text": "En haut de la grille, vous avez un âge cible. Votre tâche est de trouver le visage dont l'âge correspond au numéro indiqué."
+        },{
+          "nickname": "Supervision",
+          "text": "Vous commencerez par la colonne de gauche, et vous pourrez passer à la colonne suivante si vous trouvez le bon visage."
+        },{
+          "nickname": "Supervision",
+          "text": "La colonne actuelle (où les visages sont cliquables) est indiquée en vert."
+        },{
+          "nickname": "Supervision",
+          "text": "Lorsque vous cliquez sur un visage, il apparaît plus grand à droite. Cela vous permet de vérifier si le visage a le bon âge."
+        },{
+          "nickname": "Supervision",
+          "text": "Si vous êtes sûr que c'est le bon visage, cliquez à nouveau sur le visage. Si le visage est correct, vous pouvez passer à la colonne suivante."
+        },{
+          "nickname": "Supervision",
+          "text": "Le jeu commencera lorsque vous appuierez sur la touche 'flèche droite'. Soyez rapide, soyez précis !"
+        },{
+          "updatedCharacter": "",
+          "text": ""
+        },{
+          "text": "Le jeu est terminé ! Vous pouvez rejouer depuis la carte !"
+        }
+      ],
+      "buttons": [
+      ],
+      "game": {
+        "type": "activity",
+        "correctAnswer": "âge"
+      }
+    },
+
+    "center": {
+      "name": "Jeu",
+      "visible": 1,
+      "content": "img",
+      "id": "center",
+      "image": "https://cdn.generationvoyage.fr/2014/11/luxembourg-ville-guide-voyage.jpg",
+      "texts": [
+        {
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "Sidd Dir de gewielten ? Désolé, ... es-tu l'Élu ?"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Euh... peut-être ?"
+        }, {
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "Peu importe ! Tu devras faire l'affaire. Ta mission, si tu choisis de l'accepter,"
+        },{
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "est de battre 'Régulation' à son propre jeu, ou mourir en essayant ! Bonne chance, Héros !"
+        },{
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Attends ! Tu ne peux pas juste me laisser comme ça. Comment puis-je le battre ?"
+        },{
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "La Régulation régule les émotions des citoyens ! C'est à cause de lui que tout le monde ici est triste !"
+        },
+        {
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "Je ne sais pas quel est le jeu, mais une fois que tu l'auras battu, apporte-moi le code, et tout le monde"
+        },{
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "dans la ville retrouvera son sourire !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Affronter la Régulation !",
+          "redirectId": "emotionGame"
+        },{
+          "text": "J'ai déjà les codes !",
+          "redirectId": "emotionCode"
+        }
+      ]
+    },
+
+    "emotionCode": {
+      "name": "Code du Cœur des Émotions",
+      "id": "emotionCode",
+      "content": "img",
+      "image": "https://cdn.generationvoyage.fr/2014/11/luxembourg-ville-guide-voyage.jpg",
+      "texts": [
+        {
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_SAD.png",
+          "text": "Pour éteindre ce cœur, vous devez entrer le bon code à 3 chiffres !"
+        },
+        {
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_HAPPY.png",
+          "text": "Super ! Le cœur de la Régulation des Émotions est maintenant désactivé !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Il y a un indice",
+          "redirectId": "https://github.com/yamizi/LLCEscapeGame/blob/game_sound/client/src/assets/Slide47.PNG?raw=true"
+        }
+
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "055"
+      }
+    },
+
+    "emotion_secret": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "emotion_secret",
+      "content": "img",
+       "image": "https://cdn.generationvoyage.fr/2014/11/luxembourg-ville-guide-voyage.jpg",
+      "texts": [
+        {
+          "nickname": "Nicolas",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/NICO_HAPPY.png",
+          "text": "Il dit : 'REGARDEZ 1:30 - VOUS ÊTES PRÉVENUS DÈS LE DÉBUT !' Socrate"
+        }
+
+      ],
+      "buttons": [
+      {
+          "text": "Continuer le combat !",
+          "redirectId": "start3"
+        }
+      ]
+    },
+
+    "emotionGame": {
+      "name": "Jeu des Émotions",
+      "visible": 0,
+      "id": "emotionGame",
+      "content": "img",
+      "image": "",
+      "texts": [
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "Pourquoi si triste ? "
+        },
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_HAPPY.png",
+          "text": "AHAHA ! Et une blague, ça te dit ?"
+        },
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_HAPPY.png",
+          "text": "Qu'est-ce qui est jaune et court vite ?"
+        },
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_HAPPY.png",
+          "text": "Une orange pressée !"
+        },{
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "Je sais que c'est mieux en français !"
+        },
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "Pourquoi ne ris-tu pas ? Ris ! Ris !"
+        },
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "Jouons donc. Je te demanderai six fois de faire une émotion avec ton visage."
+        },
+        {
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "L'émotion peut être triste, heureuse, neutre, surprise. Je donnerai des points si tu la réussis bien."
+        },{
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "Chaque émotion durera 10 secondes. Plus ton émotion correspond longtemps à la cible,"
+        },{
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": " plus tu obtiendras de points. Je te donnerai les codes si tu atteins 1000 points"
+        },{
+          "nickname": "Régulation",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/REGULATION_SAD.png",
+          "text": "Le jeu commencera lorsque tu appuieras sur la touche 'flèche droite'"
+        },{
+          "text": ""
+        },{
+          "text": "Le jeu est terminé ! Veuillez enregistrer votre score"
+        }
+      ],
+      "buttons": [
+      ],
+      "game": {
+        "type": "activity",
+        "correctAnswer": "émotion"
+      }
+    },
+
+    "north": {
+      "name": "Jeu",
+      "visible": 1,
+      "id": "north",
+      "content": "img",
+      "image": "https://app.visitluxembourg.com/images/33759-resize-1170x999x70.jpg",
+      "texts": [
+
+        {
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_ANGRY.png",
+          "text": "Du bist spät !"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Euh... désolé, quoi ?"
+        },
+        {
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_ANGRY.png",
+          "text": "Dir sidd spéit !"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Je sais, je suis en retard. Mais je suis là. Comment puis-je aider la Résistance ?"
+        },{
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_SAD.png",
+          "text": "Je suis journaliste pour le Wort ! Nous sensibilisons à propos de SMART"
+        },{
+          "nickname": "Camille",
+          "text": "Mais 'Monitoring' détecte et bloque tous les tweets offensants. Nous ne pouvons rien dire contre SMART sans censure"
+        },{
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Donc si je détruis le cœur, vous pouvez diffuser vos messages !"
+        },{
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_HAPPY.png",
+          "text": "Oui ! Vous devez simplement collecter 7 tweets non offensants pour obtenir le code de désactivation, et nous ferons le reste !"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "D'accord, je vais collecter les tweets."
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Collecter les tweets !",
+          "redirectId": "tweetGame"
+        },{
+          "text": "J'ai déjà les codes !",
+          "redirectId": "tweetCode"
+        }
+      ]
+    },
+
+    "tweetCode": {
+      "name": "Code du Cœur du Nord",
+      "id": "tweetCode",
+      "content": "img",
+      "image": "https://app.visitluxembourg.com/images/33759-resize-1170x999x70.jpg",
+      "texts": [
+        {
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_SAD.png",
+          "text": "Pour éteindre ce cœur, vous devez entrer le bon code à 3 chiffres !"
+        },
+        {
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_HAPPY.png",
+          "text": "Génial ! Vous avez désactivé le cœur de la censure !"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Il y a un indice",
+          "redirectId": "https://github.com/yamizi/LLCEscapeGame/blob/game_sound/client/src/assets/Slide48.PNG?raw=true"
+        }
+      ],
+      "game": {
+        "type": "input",
+        "correctAnswer": "042"
+      }
+    },
+
+    "tweet_secret": {
+      "name": "Jeu",
+      "visible": 0,
+      "id": "tweet_secret",
+      "content": "img",
+      "image": "https://app.visitluxembourg.com/images/33759-resize-1170x999x70.jpg",
+      "texts": [
+        {
+          "nickname": "Camille",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/CAMILLE_SAD.png",
+          "text": "Il dit : LA LIBERTÉ D'EXPRESSION EST UN DROIT HUMAIN FONDAMENTAL !"
+        }
+      ],
+      "buttons": [
+      {
+          "text": "Continuer le combat !",
+          "redirectId": "start3"
+        }
+      ]
+    },
+
+    "tweetGame": {
+      "name": "Jeu des Tweets",
+      "visible": 0,
+      "id": "tweetGame",
+      "content": "img",
+      "image": "",
+      "texts": [
+        {
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_ANGRY.png",
+          "text": "Arrêtez de tweeter !"
+        },
+        {
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_HAPPY.png",
+          "text": "AHAHA ! C'est l'heure des tweets !"
+        },
+        {
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_HAPPY.png",
+          "text": "Vous devez collecter 7 tweets non offensants pour gagner le jeu !"
+        },{
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_HAPPY.png",
+          "text": "Faites attention aux hashtags, emojis et mots offensants ! Ils rendent les tweets offensants !"
+        },
+        {
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_HAPPY.png",
+          "text": "Cliquez sur un tweet pour le sélectionner. Cliquez de nouveau pour le désélectionner."
+        },{
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_HAPPY.png",
+          "text": "Lorsque vous avez sélectionné 7 tweets non offensants, cliquez sur 'Terminer le jeu' !"
+        },{
+          "nickname": "Monitoring",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/MONITORING_HAPPY.png",
+          "text": "Le jeu commence lorsque vous appuyez sur la touche 'flèche droite'"
+        },{
+          "text": ""
+        },{
+          "text": "Le jeu est terminé ! Vous pouvez rejouer depuis la carte !"
+        }
+      ],
+      "buttons": [
+      ],
+      "game": {
+        "type": "activity",
+        "correctAnswer": "tweet"
+      }
+    },
+
+    "east": {
+      "name": "Jeu",
+      "visible": 1,
+      "id": "east",
+      "content": "img",
+      "image": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/15/11/schengen.jpg",
+      "texts": [
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+          "text": "Quel silence apaisant. Pourquoi m'importunez-vous ?"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "..."
+        },
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_NEUTRAL.png",
+          "text": "M'écoutez-vous ? Quoi, est-ce que je parle japonais ? Je peux parler français si vous préférez !"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Euh... ça va ! Le français est bien. Mais pourquoi fait-il si calme ici ?"
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Il n'y a rien ! Même pas d'oiseaux ni le bruit de la rivière ! Que se passe-t-il ?"
+        },
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_NEUTRAL.png",
+          "text": "Ah, vous êtes nouveau ! Nous sommes près du Coeur Admin : cela affecte ce que nous entendons, ce que nous ressentons !"
+        },
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_SAD.png",
+          "text": "Tout est corrompu... Soyez prudent, ce que vous entendez peut ne pas être ce que dit le Coeur."
+        },
+        {
+          "nickname": "Player",
+          "updatedCharacter": "",
+          "text": "Comment puis-je arranger ça ?"
+        },
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_SAD.png",
+          "text": "C'est assez simple, nous avons besoin d'un ensemble de 3 cartes pour restaurer nos sens."
+        },
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_SAD.png",
+          "text": "Si seulement j'avais ma flûte, je pourrais vous guider pour les trouver."
+        },
+        {
+          "nickname": "Shiori",
+          "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_SAD.png",
+          "text": "Voulez-vous toujours affronter 'Admin' ?"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Oui, montrez-moi le jeu !",
+          "redirectId": "soundGame"
+        },
+        {
+          "text": "J'ai les codes d'accès",
+          "redirectId": "sound_code"
+        }
+      ]
+    },
+
+"soundGame": {
+  "name": "Jeu du Son",
+  "visible": 0,
+  "id": "soundGame",
+  "content": "img",
+  "image": "",
+  "texts": [
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "C'est un jeu de correspondance. En bas, vous avez sept cartes avec un message caché."
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Si vous déplacez votre souris sur les cartes du bas, vous pouvez lire les messages."
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Dans la zone supérieure, vous avez 7 cartes. Si vous cliquez sur l'une d'elles, vous entendrez un son."
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Faites correspondre les cartes sonores aux messages du bas."
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Vous pouvez double-cliquer sur une carte du bas pour la réinitialiser. Une carte du haut va avec une carte du bas."
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Si une carte du bas est rouge, cela signifie que la correspondance est incorrecte !"
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Et les bonnes réponses sont toujours en vert !"
+    },
+    {
+      "text": "Vous pouvez déplacer uniquement 10 cartes pour résoudre le jeu !"
+    },
+    {
+      "text": "Le jeu est terminé ! Veuillez enregistrer votre score."
+    }
+  ],
+  "buttons": []
+},
+
+
+    "sound_code": {
+  "name": "Code du Coeur Est",
+  "id": "sound_code",
+  "content": "img",
+  "image": "https://app.visitluxembourg.com/images/32801-resize-669x445x70.jpg",
+  "texts": [
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Pour désactiver ce core, vous devez entrer le code correct à 3 chiffres !"
+    },
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Bravo ! Pouvez-vous entendre la musique ? C'est merveilleux !"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Il y a un indice",
+      "redirectId": "https://github.com/yamizi/LLCEscapeGame/blob/game_sound/client/src/assets/Slide45.PNG?raw=true"
+    }
+  ],
+  "game": {
+    "type": "input",
+    "correctAnswer": "257"
+  }
+},
+
+
+    "east_secret": {
+  "name": "Jeu",
+  "visible": 0,
+  "id": "east_secret",
+  "content": "img",
+  "image": "https://app.visitluxembourg.com/images/32801-resize-669x445x70.jpg",
+  "texts": [
+    {
+      "nickname": "Shiori",
+      "updatedCharacter": "../../LLCEscapeGame/assets/locations/SHIORI_HAPPY.png",
+      "text": "Il est écrit : MÉFIEZ-VOUS DES FAUX SAUVEURS, QUI VIENNENT À VOUS AVEC DE LARGES SOURIRE, MAIS INTÉRIEUREMENT SONT DES DESPOTES AVARES."
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Continuez le combat !",
+      "redirectId": "start3"
+    }
+  ]
+},
+
+
+    "credits_lose": {
+  "name": "Crédits",
+  "id": "credits_lose",
+  "image": "../../LLCEscapeGame/assets/locations/WelcomeScreen.png",
+  "content": "img",
+  "texts": [
+    {
+      "text": "Merci d'avoir joué à ce jeu d'évasion."
+    },
+    {
+      "text": "Histoire, conception et programmation par Salah GHAMIZI"
+    },
+    {
+      "text": "Un grand merci à : Jonathan, Salijona, Yuejun pour leur soutien"
+    },
+    {
+      "text": "Et plus généralement à toutes les personnes de Serval, LLC et Descom"
+    }
+  ],
+  "buttons": []
+},
+
+
+    "credits": {
+      "name": "Crédits",
+      "id": "credits",
+      "image": "../../LLCEscapeGame/assets/locations/WelcomeScreen.png",
+      "content": "img",
+      "texts": [
+        {
+          "text": "Merci d'avoir participé à ce jeu."
+        },
+
+        {
+          "text": "Histoire, Design et programmation par Salah GHAMIZI"
+        },
+
+        {
+          "text": "Avec la participation de Jonathan, Salijona, Yuejun que je remercie chaleureusement."
+        },
+
+        {
+          "text": "et le soutien de Serval, LLC, Descom et le FNR"
+        }
+
+      ],
+      "buttons": [
+
+      ]
+    },
+
+    "scene_explain": {
+      "id": "scene_explain",
+      "visible": 0,
+      "image": "http://jcemetz.fr/wp-content/uploads/2019/02/signature-mail-2019.jpg",
+      "texts": [
+        {
+          "text": "L'application se compose de 3 parties auquelles vous accédez par le menu inférieur. Vous pouvez naviguer librement d'un écran à un autre sans perdre votre avancement."
+        },
+        {
+          "text": "C'est là où vous êtes. C'est celui qui vous donnera les instructions, les énigmes et les informations de la visite.",
+          "nickname": "L'écran 'Aventure'"
+        },
+        {
+          "text": "En cliquant sur le bouton carte, vous accédez à une carte Metz. Sur cette vue, utilisez vos 2 doigts pour glisser la carte",
+          "nickname": "L'écran 'Carte'"
+        }
+        ,
+        {
+          "text": "Vous pouvez aussi cliquer sur le bouton 'sablier' à droite pour alterner entre les cartes des différentes époques, l'époque romaine, le moyen âge, et l'époque contemporaine. Vous en aurez besoin pour résoudre des énigmes et trouver votre chemin ;-)",
+          "nickname": "L'écran 'Carte'"
+        }
+        ,
+        {
+          "text": "Le bouton à gauche vous permet de vous géolocaliser et centrer la carte autour de vous.",
+          "nickname": "L'écran 'Carte'"
+        }
+        ,
+        {
+          "text": "En cliquant sur un lieu de la carte, vous allez poser un petit symbole 'i'. C'est ainsi que vous allez répondre à des énigmes ou indiquer à l'application où vous êtes pour lancer des activités",
+          "nickname": "L'écran 'Carte'"
+        },
+        {
+          "text": "Cet écran vous permet de sauter directement d'une mission à une autre, sans avoir à faire tous les dialogues. Il vous permettra aussi de retrouver les anciennes réponses données par les personnages que vous rencontrer pour vous aider dans la suite",
+          "nickname": "L'écran 'Missions'"
+        },
+
+        {
+          "text": "Essayez maintenant tout ça, et quand vous êtes prets. Allez sur la 'Carte' et cliquez sur le marqueur numéro (1).",
+          "nickname": "L'écran 'Carte'",
+          "updatedImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Metz_March_2019_%2832509957637%29.jpg/1280px-Metz_March_2019_%2832509957637%29.jpg"
+        }
+      ],"buttons": [
+
+      ]
+
+    }
+
+  }
+}

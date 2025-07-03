@@ -1,0 +1,220 @@
+{
+  "id": "",
+  "name": "",
+  "markers":
+[
+{
+    "label": "(0) Mission principale",
+    "lat": 49.119899,
+    "lng":6.1750728,
+    "type": "main",
+    "time": "rome",
+    "id": "rome_main",
+    "scene": "scene_rome_main"
+
+  },
+  {
+    "label": "(1) Tour de Mutte",
+    "lat": 49.120401,
+    "lng":6.1754971,
+    "type": "optional",
+    "time": "rome",
+    "id": "rome_mute",
+    "scene": "scene_rome_mute"
+
+  },
+  {
+    "label": "(2) Marché Couvert",
+    "lat": 49.1198332,
+    "lng":6.1740245,
+    "type": "optional",
+    "time": "rome",
+    "id": "rome_market",
+    "scene": "scene_rome_market"
+  }
+
+  ,
+  {
+    "label": "(2) Kawa Tea",
+    "lat": 49.120426,
+    "lng":6.1735626,
+    "type": "optional",
+    "time": "rome",
+    "id": "rome_kawa",
+    "scene": "scene_rome_kawa"
+  }
+  ,
+  {
+    "label": "(3) Grenier de Chèvrement",
+    "lat": 49.1221268,
+    "lng":6.1786622,
+    "type": "optional",
+    "time": "rome",
+    "id": "rome_chevrement",
+    "scene": "scene_rome_chevrement"
+  },
+
+  {
+    "label": "(4) Temple Neuf",
+    "lat": 49.1205855,
+    "lng":6.1719095,
+    "type": "optional",
+    "time": "rome",
+    "id": "rome_temple",
+    "scene": "scene_rome_temple"
+  }
+  ,{
+    "label": "(1) Cathédrale",
+    "lat": 49.119895,
+    "lng":6.1750728,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_cathedrale",
+    "scene": "scene_moderne_cathedrale"
+
+  },
+
+  {
+    "label": "(2) Maison Paul Verlaine",
+    "lat": 49.1172294,
+    "lng":6.1717513,
+    "type": "main",
+    "time": "moderne",
+    "id": "moderne_verlaine",
+    "scene": "scene_moderne_verlaine"
+  }
+
+  ,
+  {
+    "label": "(3) Jardin de l’Esplanade",
+    "lat": 49.116086344629124,
+    "lng":6.170423460820768,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_esplanade",
+    "scene": "scene_moderne_esplanade"
+  }
+
+  ,
+  {
+    "label": "(4) Saint-Pierre-aux-Nonnains",
+    "lat": 49.1150376670523,
+    "lng":6.16929010554349,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_stpierre",
+    "scene": "scene_moderne_stpierre"
+  }
+
+  ,
+  {
+    "label": "(5) Palais du Gouverneur",
+    "lat": 49.1133301928057,
+    "lng":6.16850205256090,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_gouverneur",
+    "scene": "scene_moderne_gouverneur"
+  }
+
+  ,
+  {
+    "label": "(6) Porte Serpennoise",
+    "lat": 49.1125390923235,
+    "lng":6.17095470874024,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_serpennoise",
+    "scene": "scene_moderne_serpennoise"
+  }
+
+
+  ,
+  {
+    "label": "(8) Gare de Metz",
+    "lat": 49.1098865150516,
+    "lng":6.17704019150249,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_gare",
+    "scene": "scene_moderne_gare"
+  }
+
+  ,
+  {
+    "label": "(9) Eglise Saint Maximin",
+    "lat": 49.1157743337876,
+    "lng":6.18367133430020,
+    "type": "main",
+    "time": "moderne",
+    "id": "moderne_maximin",
+    "scene": "scene_moderne_maximin"
+  }
+
+
+
+  ,
+  {
+    "label": "(1) Arsenal",
+    "lat": 49.114485234703935,
+    "lng":6.170698166132717,
+    "type": "optional",
+    "time": "medieval",
+    "id": "medieval_arsenal",
+    "scene": "scene_medieval_arsenal"
+  }
+
+  ,
+  {
+    "label": "(2) Palais du Gouverneur",
+    "lat": 49.1133301928054,
+    "lng":6.16850205256092,
+    "type": "main",
+    "time": "medieval",
+    "id": "medieval_gouverneur",
+    "scene": "scene_medieval_gouverneur"
+  }
+
+  ,
+  {
+    "label": "(3) Tour Camoufle",
+    "lat": 49.1118875946100,
+    "lng":6.17335765687208,
+    "type": "optional",
+    "time": "medieval",
+    "id": "medieval_camoufle",
+    "scene": "scene_medieval_camoufle"
+  }
+
+   ,
+  {
+    "label": "(11) Pop White Store",
+    "lat": 49.11802957285351,
+    "lng":6.178835944115205,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_popwhite",
+    "scene": "scene_moderne_popwhite"
+  },
+  {
+    "label": "(12) Maison des têtes",
+    "lat": 49.11815904181836,
+    "lng": 6.178091631112652,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_maisontete",
+    "scene": "scene_maisontete"
+  },
+
+  {
+    "label": "(10) Tour des Vigneron",
+    "lat": 49.1173986355816,
+    "lng":6.168804034363825,
+    "type": "optional",
+    "time": "moderne",
+    "id": "moderne_vigneron",
+    "scene": "scene_moderne_vigneron"
+  }
+]
+}
+
