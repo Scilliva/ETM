@@ -1,4 +1,4 @@
-# LLCEscapeGame
+# Evade the Machines 
 
 ## Version of the game:
 As this is a reused code, I have only cloned the latest version of the game running. Please see original code for more branches and games.
