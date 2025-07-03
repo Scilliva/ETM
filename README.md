@@ -4,6 +4,7 @@
 As this is a reused code, I have only cloned the latest version of the game running. Please see original code for more branches and games.
 
 The branch to clone to reuse the code is the main branch, the gh-pages branch is only used for deployment.
+The version of the novel used is the one called novel_en
 
 ## How to reuse the code:
 As this is a web app, there are several steps to follow to be able to reuse the code and have it deployed.
